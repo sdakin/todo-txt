@@ -1,0 +1,18 @@
+{
+  "app": {
+    "background": {
+      "scripts": ["background.js"]
+    }
+  },
+  "manifest_version": 2,
+  "name": "Todo.txt",
+  "version": "0.1",
+
+  "description": "An Chrome App based on todo.txt.",
+  "icons": { "16": "todo-16.png", "128": "todo-128.png" },
+
+  "permissions": [
+    {"fileSystem": ["write", "retainEntries", "directory"]},
+    "storage"
+  ]
+}
