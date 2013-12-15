@@ -8,8 +8,8 @@ The main application module for Todo.txt.
 @extends EventTarget
 **/
 define(
-    ["xlib/EventTarget", "ui/dlgs/AlertDlg"],
-    function(EventTarget, AlertDlg)
+    ["xlib/EventTarget", "lib/util", "ui/dlgs/AlertDlg", "data/Task", "data/TaskList"],
+    function(EventTarget, util, AlertDlg, Task, TaskList)
 {
     /**
         The TodoApp object.
@@ -28,51 +28,121 @@ define(
         var self = this;
         var initQ = $.Deferred();
 
+        // an unsightly kludge to get the bottom border to show up properly
+        $("html").height($("html").height() - 2);
+
         // load the alert dialogs
         $("#app-alert-templates .alerts").load("ui/dlgs/alerts.html", function() {
             initQ.resolve();
         });
 
         initQ.done(function() {
-            self.getDataDir();
+            self.getTodoFile().then(function() {
+                self.loadTodoFile();
+            });
         });
     };
 
-    TodoApp.prototype.getDataDir = function(subDir) {
+    TodoApp.prototype.getTodoFile = function(subDir) {
+        var self = this;
         var resultQ = $.Deferred();
-        var getDirQ = $.Deferred();
+        var getTodoFileQ = $.Deferred();
 
-        chrome.storage.local.get("dataDir", function(result) {
-            if (!("dataDir" in result)) {
-                var alert = new AlertDlg("Data Directory", "You have not chosen a directory for the Todo.txt data files. Would you like to browse for one now?", ["Later", "Now"]);
+        chrome.storage.local.get("todoFileID", function(result) {
+            if (!("todoFileID" in result)) {
+                var alert = new AlertDlg("Specify todo.txt File", "You have not specified the todo.txt file to use. Would you like to browse for one now?", ["Later", "Now"]);
                 alert.addListener(AlertDlg.BUTTON_CLICKED, function(e) {
                     alert.hide();
                     if (e.buttonTitle == "Now") {
-                        chrome.fileSystem.chooseEntry({type:"openDirectory"}, function(entry) {
+                        chrome.fileSystem.chooseEntry({type:"openWritableFile"}, function(entry) {
                             chrome.fileSystem.getDisplayPath(entry, function(displayPath) {
-                                chrome.storage.local.set({dataDir: displayPath}, function() {
-                                    getDirQ.resolve(displayPath);
+                                var settings = {
+                                    todoFilePath: displayPath,
+                                    todoFileID: chrome.fileSystem.retainEntry(entry)
+                                };
+                                chrome.storage.local.set(settings, function() {
+                                    getTodoFileQ.resolve(entry);
                                 });
                             });
                         });
                     } else
-                        getDirQ.reject("dataDir not defined");
+                        getTodoFileQ.reject("todo.txt file not defined");
                 });
                 alert.show();
-            } else
-                getDirQ.resolve(result.dataDir);
+            } else {
+                chrome.fileSystem.restoreEntry(result.todoFileID, function(entry) {
+                    getTodoFileQ.resolve(entry);
+                });
+            }
         });
         
-        getDirQ.done(function(dataDir) {
-            if (subDir)
-                dataDir += "\\" + subDir;
-            resultQ.resolve(dataDir);
+        getTodoFileQ.done(function(fileEntry) {
+            self.todoFile = fileEntry;
+            resultQ.resolve();
         }).fail(function(err) {
             resultQ.reject(err);
         });
 
         return resultQ.promise();
     };
+
+    TodoApp.prototype.loadTodoFile = function() {
+        var self = this;
+        self.taskList = new TaskList();
+        self.todoFile.file(function(file) {
+            var reader = new FileReader();
+            reader.onerror = function(e) {
+                console.error("error reading file: " + e);
+            };
+            reader.onloadend = function(e) {
+                var lines = e.target.result.split("\n");
+                lines.forEach(function(line) {
+                    if (line && line.length > 0)
+                        self.taskList.addTask(new Task(line));
+                });
+                self.reloadTasks();
+            };
+
+            reader.readAsText(file);
+        });
+    };
+
+    TodoApp.prototype.reloadTasks = function() {
+        var self = this;
+        var $taskList = $("#tasks");
+        $taskList.empty();
+        var sortedTasks = self.taskList.sortTasks();
+        sortedTasks.forEach(function(task) {
+            var $taskItem = $("#ui-templates .task-item").clone();
+            setTaskItemCompletedState($taskItem, task);
+            $taskItem.attr("data-index", task.index);
+            $taskItem.find(".task-title").text(task.getTitle());
+            $taskList.append($taskItem);
+        });
+        $taskList.find(".tag-checkbox").click(function(e) {
+            self.toggleComplete($(e.target).parents(".task-item"));
+        });
+    };
+
+    TodoApp.prototype.toggleComplete = function($taskItem) {
+        var task = this.taskList.getTaskFromIndex(Number($taskItem.attr("data-index")));
+        if (task.isComplete()) {
+            // when uncompleting a task we save the completed date so we can set it back
+            // if the user marks the same task as complete in this app session
+            $taskItem.attr("data-completedDate", task.getCompletedDate());
+            task.setComplete(false);
+        } else {
+            task.setComplete(true, $taskItem.attr("data-completedDate"));
+        }
+        this.reloadTasks();
+    };
+
+    function setTaskItemCompletedState($taskItem, task) {
+        var imgSrc = "img/" + (task.isComplete() ? "completed.png" : "incomplete.png");
+        var $img = $taskItem.find(".tag-checkbox img");
+        $img.attr("src", imgSrc);
+        if (task.isComplete()) $img.attr("title", task.getCompletedDate());
+    }
 
     return TodoApp;
 });

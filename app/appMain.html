@@ -3,11 +3,12 @@
 <head>
 <link rel="stylesheet" type="text/css" media="all" href="css/bootstrap.min.css"/>
 
-<title>QMate 2.0</title>
+<title>Todo.txt</title>
 
 <style>
 html {
 	height: 100%;
+	border: 1px solid;
 }
 
 body {
@@ -16,20 +17,41 @@ body {
 	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 	font-size: 14px;
 }
+
+.task-item {
+	display: table-row;
+}
+
+.tag-item {
+	display: table-cell;
+}
+
+.task-title {
+	display: table-cell;
+}
 </style>
 
 </head>
 
 <body>
 
-<div id="modules">
+<div id="main">
 	<div id="main-dlg-hook"></div>
+	<div id="tasks"></div>
 </div>
 
 <div id="app-alert-templates" style="display:none">
     <div class="alerts"></div>
 </div>
 <div id="app-alert-hook"></div>
+
+<div id="ui-templates" style="display:none">
+	<div class="task-item">
+    	<div class="tag-item tag-checkbox"><img src=""></div>
+    	<div class="task-title" style="padding-left: 2px"></div>
+    </div>
+</div>
+
 <script data-main="js/app/appMain" src="js/xlib/require.js"></script>
 
 </body>
