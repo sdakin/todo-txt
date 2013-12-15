@@ -1,0 +1,99 @@
+<style>
+#dlgEditTask {
+	margin: auto;
+	width: auto;
+	left: 250px;
+}
+
+#dlgEditTask .modal-body {
+	overflow-y: visible;
+	padding: 20px;
+}
+
+.modal-body form {
+	margin:0px;
+}
+
+.field_label {
+	display: inline-block;
+	width: 87px;
+	text-align: right;
+	padding-right: 5px;
+}
+
+.form_line {
+	height: 44px;
+}
+
+.form_line input {
+	margin-bottom:0px;
+}
+
+.form_line_other {
+	display:none;
+}
+
+.form_line_last {
+	height:auto;
+}
+
+.errorMessage {
+	display:none;
+}
+</style>
+
+<div id="dlgEditTask" class="modal displayhide">
+	<div class="templates" style="display:none">
+        <div class="dupeNameErr alert alert-block alert-error fade in">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <p>Error: duplicate account name.</p>
+        </div>
+    </div>
+    
+    <div class="modal-header">
+        <h2>Edit Task</h2>
+    </div>
+    <div class="modal-body">
+        <button class="btn btn-star"><img src="img/staroff.png"></button>
+<!--         <form id="form-edit-account">
+            <div class="form_line">
+                <div class="field_label">Name </div>
+                <input type="text" id="fldAcctName"/>
+            </div>
+            <div class="form_line">
+                <div class="field_label">Type </div>
+                <div id="acct-type-selector" class="btn-group">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown">
+                        <span class="acct-type-dropdown-label">Bank</span>
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a>Bank</a></li>
+                        <li><a>Cash</a></li>
+                        <li><a>Checking</a></li>
+                        <li><a>Credit Card</a></li>
+                        <li><a>Investment</a></li>
+                        <li><a>Savings</a></li>
+                        <li><a>Other</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form_line form_line_other">
+                <div class="field_label">&nbsp;</div>
+                <input type="text" id="fldAcctTypeOther"/>
+            </div>
+            <div class="form_line">
+                <div class="field_label">Balance </div>
+                <input type="text" id="fldAcctBalance"/>
+            </div>
+            <div class="form_line form_line_last">
+                <div class="field_label">Bill due day </div>
+                <input type="text" id="fldAcctBillDueDate"/>
+            </div>
+        </form>
+ -->    </div>
+    <div class="modal-footer">
+        <a class="btn">Cancel</a>
+        <a class="btn">Save</a>
+    </div>
+</div>

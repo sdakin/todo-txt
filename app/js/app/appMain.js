@@ -18,7 +18,7 @@ requirejs.config({
     }
 });
 
-// The one and only Expenses app
+// The one and only Todo app
 var gApp;
 
 define(["jquery", "app/TodoApp"], function($, TodoApp) {

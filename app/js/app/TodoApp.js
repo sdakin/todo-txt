@@ -8,8 +8,12 @@ The main application module for Todo.txt.
 @extends EventTarget
 **/
 define(
-    ["xlib/EventTarget", "lib/util", "ui/dlgs/AlertDlg", "data/Task", "data/TaskList"],
-    function(EventTarget, util, AlertDlg, Task, TaskList)
+    ["xlib/EventTarget", "lib/util",
+     "ui/dlgs/AlertDlg", "ui/dlgs/EditTaskDlg",
+     "data/Task", "data/TaskList"],
+    function(EventTarget, util, 
+             AlertDlg, EditTaskDlg,
+             Task, TaskList)
 {
     /**
         The TodoApp object.
@@ -40,6 +44,20 @@ define(
             self.getTodoFile().then(function() {
                 self.loadTodoFile();
             });
+        });
+    };
+
+    TodoApp.prototype.editTask = function($taskItem) {
+        var self = this;
+        $("#main-dlg-hook").load("ui/dlgs/editTask.html", function() {
+            var task = self.taskList.getTaskFromIndex(Number($taskItem.attr("data-index")));
+            self.editTaskDlg = new EditTaskDlg(task);
+            self.editTaskDlg.addListener(EditTaskDlg.SAVE_TASK, function() {
+                self.editTaskDlg.hide();
+                self.saveTasks();
+                self.reloadTasks();
+            });
+            self.editTaskDlg.show();
         });
     };
 
@@ -128,6 +146,13 @@ define(
         $taskList.find(".tag-checkbox").click(function(e) {
             self.toggleComplete($(e.target).parents(".task-item"));
         });
+        $taskList.find(".task-contents").click(function(e) {
+            self.editTask($(e.target).parents(".task-item"));
+        });
+    };
+
+    TodoApp.prototype.saveTasks = function() {
+        console.log("TODO: implement saveTasks()...");
     };
 
     TodoApp.prototype.toggleComplete = function($taskItem) {

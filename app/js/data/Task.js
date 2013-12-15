@@ -43,8 +43,22 @@ define([], function() {
         // TODO: ...
     };
 
+    Task.prototype.hasStar = function() {
+        return this.rawData.indexOf(" @star") > 0;
+    };
+
     Task.prototype.isStar = function() {
         return !this.isComplete() && this.rawData.indexOf(" @star") > 0;
+    };
+
+    Task.prototype.setStar = function(flag) {
+        if (flag) {
+            if (!this.hasStar())
+                this.rawData += " @star";
+        } else {
+            if (this.hasStar())
+                this.rawData = this.rawData.replace(" @star", "");
+        }
     };
 
     Task.prototype.compare = function(rhs) {
