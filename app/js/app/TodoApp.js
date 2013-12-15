@@ -115,8 +115,14 @@ define(
         sortedTasks.forEach(function(task) {
             var $taskItem = $("#ui-templates .task-item").clone();
             setTaskItemCompletedState($taskItem, task);
+            var $star = $taskItem.find(".tag-star");
+            if (task.isStar()) $star.css("display", "inline-block");
+            else $star.hide();
             $taskItem.attr("data-index", task.index);
-            $taskItem.find(".task-title").text(task.getTitle());
+            var $title = $taskItem.find(".task-title");
+            $title.text(task.getTitle());
+            if (task.isComplete()) $title.css("color", "darkgray");
+            else if (task.isPastDue()) $title.css("color", "red");
             $taskList.append($taskItem);
         });
         $taskList.find(".tag-checkbox").click(function(e) {
@@ -139,7 +145,7 @@ define(
 
     function setTaskItemCompletedState($taskItem, task) {
         var imgSrc = "img/" + (task.isComplete() ? "completed.png" : "incomplete.png");
-        var $img = $taskItem.find(".tag-checkbox img");
+        var $img = $taskItem.find(".tag-checkbox");
         $img.attr("src", imgSrc);
         if (task.isComplete()) $img.attr("title", task.getCompletedDate());
     }

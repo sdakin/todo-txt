@@ -39,17 +39,39 @@ define([], function() {
         return this.rawData.startsWith("x ");
     };
 
+    Task.prototype.isPastDue = function() {
+        // TODO: ...
+    };
+
+    Task.prototype.isStar = function() {
+        return !this.isComplete() && this.rawData.indexOf(" @star") > 0;
+    };
+
     Task.prototype.compare = function(rhs) {
+        // first sort order item is completed status
         if (this.isComplete() && !rhs.isComplete()) return 1;
         else if (rhs.isComplete() && !this.isComplete()) return -1;
         else if (this.isComplete() && rhs.isComplete()) {
+            // if both tasks are complete then next sort on completed date
             var compDate = this.getCompletedDate(), rhsCompDate = rhs.getCompletedDate();
-            if (compDate && rhsCompDate)
-                return compDate.localeCompare(rhsCompDate);
+            if (compDate && rhsCompDate) {
+                // reverse chronological date (most recently completed first)
+                return rhsCompDate.localeCompare(compDate);
+            }
             else
                 console.error("invalid completed date");
         }
-        return 0;
+        
+        // move starred tasks to the top
+        if (this.isStar() && !rhs.isStar()) return -1;
+        else if (rhs.isStar() && !this.isStar()) return 1;
+
+        // TODO: sort on priority
+
+        // TODO: sort on due date
+
+        // last is alphabetical by title
+        return this.getTitle().localeCompare(rhs.getTitle());
     };
 
     Task.prototype.setComplete = function(flag, completedDate) {

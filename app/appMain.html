@@ -7,27 +7,31 @@
 
 <style>
 html {
-	height: 100%;
-	border: 1px solid;
+    height: 100%;
+    border: 1px solid;
 }
 
 body {
-	height: 100%;
-	padding: 0px 10px 10px;
-	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-	font-size: 14px;
+    height: 100%;
+    padding: 0px 10px 10px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 14px;
 }
 
 .task-item {
-	display: table-row;
+    display: table-row;
 }
 
-.tag-item {
-	display: table-cell;
+.task-tags {
+    display: table-cell;
 }
 
-.task-title {
-	display: table-cell;
+.tag-star {
+	display: none;
+}
+
+.task-contents {
+    display: table-cell;
 }
 </style>
 
@@ -36,8 +40,8 @@ body {
 <body>
 
 <div id="main">
-	<div id="main-dlg-hook"></div>
-	<div id="tasks"></div>
+    <div id="main-dlg-hook"></div>
+    <div id="tasks"></div>
 </div>
 
 <div id="app-alert-templates" style="display:none">
@@ -46,9 +50,14 @@ body {
 <div id="app-alert-hook"></div>
 
 <div id="ui-templates" style="display:none">
-	<div class="task-item">
-    	<div class="tag-item tag-checkbox"><img src=""></div>
-    	<div class="task-title" style="padding-left: 2px"></div>
+    <div class="task-item">
+        <div class="task-tags">
+            <img class="tag-checkbox" src="">
+        </div>
+        <div class="task-contents" style="padding-left: 2px">
+            <img class="tag-star" src="img/star.png">
+        	<span class="task-title"></span>
+        </div>
     </div>
 </div>
 
