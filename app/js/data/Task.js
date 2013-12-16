@@ -17,16 +17,20 @@ define([], function() {
 
     Task.prototype.getTitle = function() {
         var title = this.rawData;
-        var priorityRE = /^(\([A-Z]\)).*/;
-        var match = priorityRE.exec(title);
 
-        if (match && match.length > 1) {    // skip over the priority
-            title = title.substr(4);
-        } else if (this.isComplete()) {     // skip over the completed info
+        // skip over the completed info
+        if (this.isComplete()) {
             title = title.substr(2);
             var compDate = this.getCompletedDate();
             if (compDate)
                 title = title.substr(compDate.length).trim();
+        }
+
+        // skip over the priority
+        var priorityRE = /^(\([A-Z]\)).*/;
+        var match = priorityRE.exec(title);
+        if (match && match.length > 1) {
+            title = title.substr(4);
         }
 
         // skip over the created date
@@ -51,7 +55,13 @@ define([], function() {
     };
 
     Task.prototype.isStar = function() {
-        return this.rawData.startsWith("(A) ");
+        var testStr = this.rawData;
+        if (this.isComplete()) {
+            var index = testStr.indexOf(' ');
+            index = testStr.indexOf(' ', index + 1);
+            testStr = testStr.substr(index + 1);
+        }
+        return testStr.startsWith("(A) ");
     };
 
     Task.prototype.setStar = function(flag) {
