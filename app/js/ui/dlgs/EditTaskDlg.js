@@ -20,6 +20,7 @@ define(
         this.cancelBtn().unbind("click").bind("click", function() { self.hide(); });
         this.saveBtn().unbind("click").bind("click", function() { self.saveData(); });
         $(".btn-star").unbind("click").bind("click", function() { self.toggleStar(); });
+
         // $("#acct-type-selector .dropdown-menu li").unbind("click").bind("click", function(e) {
         //     var acctType = $(e.currentTarget).text();
         //     $("#acct-type-selector .acct-type-dropdown-label").text(acctType);
@@ -27,6 +28,8 @@ define(
         // $("#fldAcctName").unbind("textchange").bind("textchange", function(e) {
         //     self.updateUI();
         // });
+
+        // parse the pre-content values from the task before extracting the title
         var tokenizer = new TaskTokenizer();
         tokenizer.tokenize(task.rawData, function(token, tokenType) {
             switch (tokenType) {
@@ -45,6 +48,9 @@ define(
             }
         });
         $("#fldTitle").val(task.getTitle());
+        if (self.isComplete)
+            $("#dlgEditTask .btn-complete img").attr("src", "img/completed.png");
+        $("#fldCompletedDate").val(self.completedDate);
     }
 
     EditTaskDlg.prototype = new EventTarget();

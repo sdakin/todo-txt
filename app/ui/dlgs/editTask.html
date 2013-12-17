@@ -36,7 +36,14 @@
 }
 
 #fldTitle {
-    width: 400px;
+    width: 375px;
+}
+
+input[type="text"].dateInput {
+    margin-bottom: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    width: 100px;
 }
 </style>
 
@@ -52,42 +59,74 @@
         <h2>Edit Task</h2>
     </div>
     <div class="modal-body">
-        <div class="btn-group">
-            <button type="button" class="btn btn-star"><img src="img/staroff.png"></button>
-            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu priority-menu" role="menu">
-                <li><a href="#">A<span class="icon icon-ok"></span></a></li>
-                <li><a href="#">B</a></li>
-                <li><a href="#">C</a></li>
-                <li><a href="#">D</a></li>
-                <li><a href="#">E</a></li>
-                <li><a href="#">F</a></li>
-                <li><a href="#">G</a></li>
-                <li><a href="#">H</a></li>
-                <li><a href="#">I</a></li>
-                <li><a href="#">J</a></li>
-                <li><a href="#">K</a></li>
-                <li><a href="#">L</a></li>
-                <li><a href="#">M</a></li>
-                <li><a href="#">N</a></li>
-                <li><a href="#">O</a></li>
-                <li><a href="#">P</a></li>
-                <li><a href="#">Q</a></li>
-                <li><a href="#">R</a></li>
-                <li><a href="#">S</a></li>
-                <li><a href="#">T</a></li>
-                <li><a href="#">U</a></li>
-                <li><a href="#">V</a></li>
-                <li><a href="#">W</a></li>
-                <li><a href="#">X</a></li>
-                <li><a href="#">Y</a></li>
-                <li><a href="#">Z</a></li>
-            </ul>
+        <div style="padding-bottom: 10px">
+            <button type="button" class="btn btn-complete"><img src="img/incomplete.png"></button>
+            <span style="margin-left: 5px">Completed date:</span>
+            <div class="btn-group">
+                <input id="fldCompletedDate" type="text" class="dateInput"/>
+                <button class="btn dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <!-- dropdown menu links -->
+                </ul>
+            </div>
         </div>
-        <div style="display:inline-block">
-            <input type="text" id="fldTitle" style="margin-bottom:0"/>
+        <div style="display:inline-flex">
+            <div class="btn-group" style="margin-right: 5px">
+                <button type="button" class="btn btn-star"><img src="img/staroff.png"></button>
+                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu priority-menu" role="menu">
+                    <li><a href="#">A<span class="icon icon-ok"></span></a></li>
+                    <li><a href="#">B</a></li>
+                    <li><a href="#">C</a></li>
+                    <li><a href="#">D</a></li>
+                    <li><a href="#">E</a></li>
+                    <li><a href="#">F</a></li>
+                    <li><a href="#">G</a></li>
+                    <li><a href="#">H</a></li>
+                    <li><a href="#">I</a></li>
+                    <li><a href="#">J</a></li>
+                    <li><a href="#">K</a></li>
+                    <li><a href="#">L</a></li>
+                    <li><a href="#">M</a></li>
+                    <li><a href="#">N</a></li>
+                    <li><a href="#">O</a></li>
+                    <li><a href="#">P</a></li>
+                    <li><a href="#">Q</a></li>
+                    <li><a href="#">R</a></li>
+                    <li><a href="#">S</a></li>
+                    <li><a href="#">T</a></li>
+                    <li><a href="#">U</a></li>
+                    <li><a href="#">V</a></li>
+                    <li><a href="#">W</a></li>
+                    <li><a href="#">X</a></li>
+                    <li><a href="#">Y</a></li>
+                    <li><a href="#">Z</a></li>
+                </ul>
+            </div>
+            <div style="display:inline-block">
+                <!--input type="text" id="fldTitle" /-->
+                <textarea id="fldTitle" rows="3" style="resize:vertical"></textarea>
+            </div>
+        </div>
+        <div style="height: 30px">
+            <div class="pull-right">
+                <div class="btn-group">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Project
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu project-menu"></ul>
+                </div>
+                <div class="btn-group">
+                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Context
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu context-menu"></ul>
+                </div>
+            </div>
         </div>
 <!--         <form id="form-edit-account">
             <div class="form_line">
