@@ -1,8 +1,8 @@
 "use strict";
 
 define(
-    ["xlib/EventTarget", "data/Task", "bootstrap", "jq.textchange"],
-    function(EventTarget, Task, bootstrap, textchange)
+    ["xlib/EventTarget", "data/Task", "data/TaskTokenizer", "bootstrap", "jq.textchange"],
+    function(EventTarget, Task, TaskTokenizer, bootstrap, textchange)
 {
 
     function EditTaskDlg(task) {
@@ -27,6 +27,24 @@ define(
         // $("#fldAcctName").unbind("textchange").bind("textchange", function(e) {
         //     self.updateUI();
         // });
+        var tokenizer = new TaskTokenizer();
+        tokenizer.tokenize(task.rawData, function(token, tokenType) {
+            switch (tokenType) {
+                case TaskTokenizer.COMPLETED_FLAG_TOKEN:
+                    self.isComplete = true;
+                    break;
+                case TaskTokenizer.COMPLETED_DATE_TOKEN:
+                    self.completedDate = token;
+                    break;
+                case TaskTokenizer.PRIORITY_TOKEN:
+                    self.priority = token;
+                    break;
+                case TaskTokenizer.CREATED_DATE_TOKEN:
+                    self.createdDate = token;
+                    break;
+            }
+        });
+        $("#fldTitle").val(task.getTitle());
     }
 
     EditTaskDlg.prototype = new EventTarget();
@@ -51,9 +69,17 @@ define(
     };
 
     EditTaskDlg.prototype.saveData = function() {
-        var $imgStar = $(".btn-star img");
-        this.task.setStar($imgStar.attr("src") == "img/star.png");
-        this.fire(EditTaskDlg.SAVE_TASK);
+        var tokenizer = new TaskTokenizer();
+        var result = tokenizer.tokenize($("#fldTitle").val(), function(token, tokenType) {
+            console.log(tokenType + ": " + token);
+        });
+        if (!result) {
+            console.error("ERROR: invalid task format.");
+        } else {
+            var $imgStar = $(".btn-star img");
+            this.task.setStar($imgStar.attr("src") == "img/star.png");
+            this.fire(EditTaskDlg.SAVE_TASK);
+        }
     };
 
     EditTaskDlg.prototype.toggleStar = function() {
