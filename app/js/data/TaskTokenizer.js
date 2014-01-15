@@ -21,7 +21,7 @@ define([], function() {
         var tokens = taskData.split(" ");
         var curToken = TaskTokenizer.PRE_TOKEN;
         var tokenIndex = 0;
-        var title = "", titleDone = false;
+        var title = "", titleStarted = false, titleDone = false;
 
         for (var tokenIndex = 0 ; tokenIndex < tokens.length ; tokenIndex++) {
             var token = tokens[tokenIndex];
@@ -74,6 +74,7 @@ define([], function() {
             } else {
                 result = false;
                 tokenIndex = tokens.length;
+                titleStarted = true;
             }
         }
         function handleContentToken(token) {
@@ -84,6 +85,8 @@ define([], function() {
                 processToken(token, TaskTokenizer.CONTEXT_TOKEN);
             else if (isCustomToken(token))
                 processToken(token, TaskTokenizer.CUSTOM_TOKEN);
+            else if (!titleStarted && isDateToken(token))
+                processToken(token, TaskTokenizer.CREATED_DATE_TOKEN);
             else
                 addToTitleToken(token);
         }

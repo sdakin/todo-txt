@@ -135,7 +135,16 @@ define(
             setTaskItemCompletedState($taskItem, task);
             var $star = $taskItem.find(".tag-star");
             if (task.isStar()) $star.css("display", "inline-block");
-            else $star.hide();
+            else {
+                $star.hide();
+                var priority = task.getPriority();
+                if (priority) {
+                    var $prio = $taskItem.find(".task-priority");
+                    $prio.text(priority);
+                    $prio.css("display", "inline-block");
+                    if (task.isComplete()) $prio.css("color", "darkgray");
+                }
+            }
             $taskItem.attr("data-index", task.index);
             var $title = $taskItem.find(".task-title");
             $title.text(task.getTitle());

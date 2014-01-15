@@ -1,6 +1,6 @@
 "use strict";
 
-define([], function() {
+define(["data/TaskTokenizer"], function(TaskTokenizer) {
 
     function Task(initData) {
         // published properties
@@ -13,6 +13,27 @@ define([], function() {
         if (match && match.length > 1)
             return match[1];
         return null;
+    };
+
+    Task.prototype.getCreatedDate = function() {
+        var result = null;
+        var tokenizer = new TaskTokenizer();
+        tokenizer.tokenize(this.rawData, function(token, tokenType) {
+            if (tokenType == TaskTokenizer.CREATED_DATE_TOKEN) {
+                result = token;
+                return true;
+            }
+        });
+        return result;
+    };
+
+    Task.prototype.getPriority = function() {
+        var result = null;
+        var pattern = (this.isComplete() ? / prio:([A-Z])/ : /^\(([A-Z])\)/ );
+        var match = pattern.exec(this.rawData);
+        if (match && match.length > 1)
+            result = match[1];
+        return result;
     };
 
     Task.prototype.getTitle = function() {
@@ -35,11 +56,11 @@ define([], function() {
 
         // skip over the created date
         var re = /^([0-9]{4}-[0-9]{2}-[0-9]{2}).*/;
-        var match = re.exec(title);
+        match = re.exec(title);
         if (match && match.length > 1)
             title = title.substr(match[1].length);
 
-        return title.trim();
+        return title.trim().replace(/ prio:[A-Z]/, "");
     };
 
     Task.prototype.isComplete = function() {
@@ -47,7 +68,13 @@ define([], function() {
     };
 
     Task.prototype.isPastDue = function() {
-        // TODO: ...
+        var dueRE = / due:([0-9]{4}-[0-9]{2}-[0-9]{2})/;
+        var match = dueRE.exec(this.rawData);
+        if (match && match.length > 1) {
+            var due = new Date(match[1]), now = new Date();
+            return (due.getTime() < now.getTime());
+        }
+        return false;
     };
 
     Task.prototype.hasStar = function() {
@@ -55,13 +82,7 @@ define([], function() {
     };
 
     Task.prototype.isStar = function() {
-        var testStr = this.rawData;
-        if (this.isComplete()) {
-            var index = testStr.indexOf(' ');
-            index = testStr.indexOf(' ', index + 1);
-            testStr = testStr.substr(index + 1);
-        }
-        return testStr.startsWith("(A) ");
+        return this.getPriority() === "A";
     };
 
     Task.prototype.setStar = function(flag) {
@@ -93,7 +114,11 @@ define([], function() {
         if (this.isStar() && !rhs.isStar()) return -1;
         else if (rhs.isStar() && !this.isStar()) return 1;
 
-        // TODO: sort on priority
+        // sort on priority
+        var prio = this.getPriority(), rhsPrio = rhs.getPriority();
+        if (prio !== null && rhsPrio !== null) return prio.localeCompare(rhsPrio);
+        else if (prio !== null && rhsPrio === null) return -1;
+        else if (prio === null && rhsPrio !== null) return 1;
 
         // TODO: sort on due date
 
@@ -102,6 +127,7 @@ define([], function() {
     };
 
     Task.prototype.setComplete = function(flag, completedDate) {
+        var rawData, prio, createdDate;
         if (flag) {
             if (!this.isComplete()) {
                 if (!completedDate) {
@@ -111,14 +137,28 @@ define([], function() {
                     completedDate += (month < 10 ? "0" : "") + month + "-";
                     completedDate += (day < 10 ? "0" : "") + day;
                 }
-                this.rawData = "x " + completedDate + " " + this.rawData;
+                rawData = "x " + completedDate;
+                createdDate = this.getCreatedDate();
+                if (createdDate) rawData += " " + createdDate;
+                rawData += " " + this.getTitle();
+                prio = this.getPriority();
+                if (prio) rawData += " prio:" + prio;
+                this.rawData = rawData;
             }
         } else {
             if (this.isComplete()) {
                 var compDate = this.getCompletedDate();
+                prio = this.getPriority();
                 this.rawData = this.rawData.substr(2);
-                if (compDate)
+                if (compDate) {
                     this.rawData = this.rawData.substr(compDate.length).trim();
+                    rawData = "";
+                    if (prio) rawData = "(" + prio + ")";
+                    createdDate = this.getCreatedDate();
+                    if (createdDate) rawData += " " + createdDate;
+                    rawData += " " + this.getTitle();
+                    this.rawData = rawData;
+                }
             }
         }
     };
