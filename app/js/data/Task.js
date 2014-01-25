@@ -96,7 +96,7 @@ define(["data/TaskTokenizer"], function(TaskTokenizer) {
     };
 
     Task.prototype.compare = function(rhs) {
-        // first sort order item is completed status
+        // show non-completed tasks first
         if (this.isComplete() && !rhs.isComplete()) return 1;
         else if (rhs.isComplete() && !this.isComplete()) return -1;
         else if (this.isComplete() && rhs.isComplete()) {

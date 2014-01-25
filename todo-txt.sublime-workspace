@@ -4,6 +4,46 @@
 		"selected_items":
 		[
 			[
+				"title",
+				"titleStarted"
+			],
+			[
+				"Task",
+				"TaskTokenizer"
+			],
+			[
+				"get",
+				"getPriority"
+			],
+			[
+				"cre",
+				"createdDate"
+			],
+			[
+				"compl",
+				"completedDate"
+			],
+			[
+				"du",
+				"dueRE"
+			],
+			[
+				"compare",
+				"localeCompare"
+			],
+			[
+				"rhs",
+				"rhsPrio"
+			],
+			[
+				"A",
+				"A-Z"
+			],
+			[
+				"is",
+				"isComplete"
+			],
+			[
 				"g",
 				"getQ"
 			],
@@ -312,10 +352,6 @@
 				"whereClause"
 			],
 			[
-				"is",
-				"isset"
-			],
-			[
 				"sc",
 				"scoreData"
 			],
@@ -354,10 +390,6 @@
 			[
 				"scor",
 				"scoreData"
-			],
-			[
-				"get",
-				"getScoreCategories"
 			],
 			[
 				"sw",
@@ -399,6 +431,64 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "todo-txt.sublime-project",
+			"settings":
+			{
+				"buffer_size": 102,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Searching 39 files for \"TaskTokenizer\"\n\nC:\\dev\\proj\\todo-txt\\app\\js\\data\\TaskTokenizer.js:\n    3  define([], function() {\n    4  \n    5:     function TaskTokenizer() {\n    6      }\n    7  \n    8:     TaskTokenizer.PRE_TOKEN = \"PRE_TOKEN\";\n    9:     TaskTokenizer.COMPLETED_FLAG_TOKEN = \"COMPLETED_FLAG_TOKEN\";\n   10:     TaskTokenizer.COMPLETED_DATE_TOKEN = \"COMPLETED_DATE_TOKEN\";\n   11:     TaskTokenizer.PRIORITY_TOKEN = \"PRIORITY_TOKEN\";\n   12:     TaskTokenizer.CREATED_DATE_TOKEN = \"CREATED_DATE_TOKEN\";\n   13:     TaskTokenizer.CONTENT_TOKEN = \"CONTENT_TOKEN\";\n   14:     TaskTokenizer.TITLE_TOKEN = \"TITLE_TOKEN\";\n   15:     TaskTokenizer.PROJECT_TOKEN = \"PROJECT_TOKEN\";\n   16:     TaskTokenizer.CONTEXT_TOKEN = \"CONTEXT_TOKEN\";\n   17:     TaskTokenizer.CUSTOM_TOKEN = \"CUSTOM_TOKEN\";\n   18  \n   19:     TaskTokenizer.prototype.tokenize = function(taskData, callback) {\n   20          var result = true;\n   21          var tokens = taskData.split(\" \");\n   22:         var curToken = TaskTokenizer.PRE_TOKEN;\n   23          var tokenIndex = 0;\n   24          var title = \"\", titleDone = false;\n   ..\n   28              if (token.length > 0) {\n   29                  switch (curToken) {\n   30:                     case TaskTokenizer.PRE_TOKEN:\n   31                          if (token == \"x\")\n   32:                             processToken(token, TaskTokenizer.COMPLETED_FLAG_TOKEN);\n   33                          else if (isPriorityToken(token))\n   34:                             processToken(token, TaskTokenizer.PRIORITY_TOKEN);\n   35                          else if (isDateToken(token))\n   36:                             processToken(token, TaskTokenizer.CREATED_DATE_TOKEN);\n   37                          else\n   38                              handleContentToken(token);\n   39                          break;\n   40  \n   41:                     case TaskTokenizer.COMPLETED_FLAG_TOKEN:\n   42                          if (isDateToken(token))\n   43:                             processToken(token, TaskTokenizer.COMPLETED_DATE_TOKEN);\n   44                          else\n   45                              invalidToken();\n   46                          break;\n   47  \n   48:                     case TaskTokenizer.COMPLETED_DATE_TOKEN:\n   49                          if (isPriorityToken(token))\n   50:                             processToken(token, TaskTokenizer.PRIORITY_TOKEN);\n   51                          else if (isDateToken(token))\n   52:                             processToken(token, TaskTokenizer.CREATED_DATE_TOKEN);\n   53                          else\n   54                              handleContentToken(token);\n   55                          break;\n   56  \n   57:                     case TaskTokenizer.CONTENT_TOKEN:\n   58                      default:\n   59                          handleContentToken(token);\n   ..\n   65          // after we tokenized the entire string process the title if we extracted one\n   66          if (result && title.length > 0)\n   67:             processToken(title, TaskTokenizer.TITLE_TOKEN);\n   68          return result;\n   69  \n   ..\n   78          }\n   79          function handleContentToken(token) {\n   80:             curToken = TaskTokenizer.CONTENT_TOKEN;\n   81              if (isProjectToken(token))\n   82:                 processToken(token, TaskTokenizer.PROJECT_TOKEN);\n   83              else if (isContextToken(token))\n   84:                 processToken(token, TaskTokenizer.CONTEXT_TOKEN);\n   85              else if (isCustomToken(token))\n   86:                 processToken(token, TaskTokenizer.CUSTOM_TOKEN);\n   87              else\n   88                  addToTitleToken(token);\n   ..\n  119                  tokenIndex = tokens.length;\n  120              }\n  121:             if (tokenType == TaskTokenizer.PROJECT_TOKEN ||\n  122:                 tokenType == TaskTokenizer.CONTEXT_TOKEN ||\n  123:                 tokenType == TaskTokenizer.CUSTOM_TOKEN) {\n  124                      titleDone = true;\n  125              }\n  ...\n  133      }\n  134  \n  135:     return TaskTokenizer;\n  136  });\n  137  \n\nC:\\dev\\proj\\todo-txt\\app\\js\\ui\\dlgs\\EditTaskDlg.js:\n    2  \n    3  define(\n    4:     [\"xlib/EventTarget\", \"data/Task\", \"data/TaskTokenizer\", \"bootstrap\", \"jq.textchange\"],\n    5:     function(EventTarget, Task, TaskTokenizer, bootstrap, textchange)\n    6  {\n    7  \n    .\n   31  \n   32          // parse the pre-content values from the task before extracting the title\n   33:         var tokenizer = new TaskTokenizer();\n   34          tokenizer.tokenize(task.rawData, function(token, tokenType) {\n   35              switch (tokenType) {\n   36:                 case TaskTokenizer.COMPLETED_FLAG_TOKEN:\n   37                      self.isComplete = true;\n   38                      break;\n   39:                 case TaskTokenizer.COMPLETED_DATE_TOKEN:\n   40                      self.completedDate = token;\n   41                      break;\n   42:                 case TaskTokenizer.PRIORITY_TOKEN:\n   43                      self.priority = token;\n   44                      break;\n   45:                 case TaskTokenizer.CREATED_DATE_TOKEN:\n   46                      self.createdDate = token;\n   47                      break;\n   ..\n   76  \n   77      EditTaskDlg.prototype.saveData = function() {\n   78:         var tokenizer = new TaskTokenizer();\n   79          var result = tokenizer.tokenize($(\"#fldTitle\").val(), function(token, tokenType) {\n   80              console.log(tokenType + \": \" + token);\n\n40 matches across 2 files\n",
+			"settings":
+			{
+				"buffer_size": 5530,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "app/js/data/Task.js",
+			"settings":
+			{
+				"buffer_size": 5768,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/sdakin/Dropbox/todo/todo.txt",
+			"settings":
+			{
+				"buffer_size": 1776,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/js/app/TodoApp.js",
+			"settings":
+			{
+				"buffer_size": 6833,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/appMain.html",
+			"settings":
+			{
+				"buffer_size": 1469,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/js/data/TaskTokenizer.js",
+			"settings":
+			{
+				"buffer_size": 5080,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -424,6 +514,7 @@
 	},
 	"file_history":
 	[
+		"/C/Users/sdakin/Desktop/Win8.1Keys.txt",
 		"/C/Users/Steve/Dropbox/todo/todo.txt",
 		"/C/Users/Steve/Desktop/Amex0113-1013.csv",
 		"/C/Users/Steve/Downloads/ofx.qif",
@@ -520,6 +611,7 @@
 		"height": 0.0,
 		"where_history":
 		[
+			"C:\\dev\\proj\\todo-txt\\app",
 			"C:\\dev\\projects\\web\\expenses\\app",
 			"C:\\dev\\projects\\web\\tps\\www",
 			"C:\\dev\\sdd\\tps"
@@ -530,6 +622,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"TaskTokenizer",
+			"loadTodoFile",
+			"TaskTokenizer",
 			"getImportFiles",
 			"FileReader",
 			"importData",
@@ -654,10 +749,7 @@
 			"})",
 			"curStudent",
 			"echo",
-			"$exists",
-			"$result",
-			"data",
-			"getWhereClauseInfo"
+			"$exists"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -680,8 +772,1002 @@
 	"groups":
 	[
 		{
+			"selected": 5,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "todo-txt.sublime-project",
+					"settings":
+					{
+						"buffer_size": 102,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								38,
+								38
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"html": "C:\\dev\\tools\\tidy.exe"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"settings":
+					{
+						"buffer_size": 5530,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										150,
+										163
+									],
+									[
+										200,
+										213
+									],
+									[
+										250,
+										263
+									],
+									[
+										322,
+										335
+									],
+									[
+										394,
+										407
+									],
+									[
+										454,
+										467
+									],
+									[
+										522,
+										535
+									],
+									[
+										580,
+										593
+									],
+									[
+										634,
+										647
+									],
+									[
+										692,
+										705
+									],
+									[
+										750,
+										763
+									],
+									[
+										814,
+										827
+									],
+									[
+										993,
+										1006
+									],
+									[
+										1227,
+										1240
+									],
+									[
+										1356,
+										1369
+									],
+									[
+										1512,
+										1525
+									],
+									[
+										1658,
+										1671
+									],
+									[
+										1869,
+										1882
+									],
+									[
+										2015,
+										2028
+									],
+									[
+										2217,
+										2230
+									],
+									[
+										2367,
+										2380
+									],
+									[
+										2513,
+										2526
+									],
+									[
+										2724,
+										2737
+									],
+									[
+										3032,
+										3045
+									],
+									[
+										3203,
+										3216
+									],
+									[
+										3321,
+										3334
+									],
+									[
+										3445,
+										3458
+									],
+									[
+										3568,
+										3581
+									],
+									[
+										3782,
+										3795
+									],
+									[
+										3849,
+										3862
+									],
+									[
+										3916,
+										3929
+									],
+									[
+										4057,
+										4070
+									],
+									[
+										4218,
+										4231
+									],
+									[
+										4304,
+										4317
+									],
+									[
+										4497,
+										4510
+									],
+									[
+										4659,
+										4672
+									],
+									[
+										4808,
+										4821
+									],
+									[
+										4961,
+										4974
+									],
+									[
+										5103,
+										5116
+									],
+									[
+										5330,
+										5343
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"detect_indentation": false,
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"output_tag": 1,
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"html": "C:\\dev\\tools\\tidy.exe"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/js/data/Task.js",
+					"settings":
+					{
+						"buffer_size": 5768,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5768,
+								5768
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"html": "C:\\dev\\tools\\tidy.exe"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1620.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/sdakin/Dropbox/todo/todo.txt",
+					"settings":
+					{
+						"buffer_size": 1776,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3,
+								3
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"html": "C:\\dev\\tools\\tidy.exe"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/js/app/TodoApp.js",
+					"settings":
+					{
+						"buffer_size": 6833,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5102,
+								5102
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"html": "C:\\dev\\tools\\tidy.exe"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/appMain.html",
+					"settings":
+					{
+						"buffer_size": 1469,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								261,
+								261
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"html": "C:\\dev\\tools\\tidy.exe"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/js/data/TaskTokenizer.js",
+					"settings":
+					{
+						"buffer_size": 5080,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3106,
+								3106
+							]
+						],
+						"settings":
+						{
+							"annotations":
+							[
+								"TODO",
+								"README",
+								"FIXME"
+							],
+							"csslint_options":
+							{
+								"adjoining-classes": "warning",
+								"box-model": true,
+								"box-sizing": "warning",
+								"compatible-vendor-prefixes": "warning",
+								"display-property-grouping": true,
+								"duplicate-background-images": "warning",
+								"duplicate-properties": true,
+								"empty-rules": true,
+								"errors": true,
+								"fallback-colors": "warning",
+								"floats": "warning",
+								"font-faces": "warning",
+								"font-sizes": "warning",
+								"gradients": "warning",
+								"ids": "warning",
+								"import": "warning",
+								"important": "warning",
+								"known-properties": true,
+								"outline-none": "warning",
+								"overqualified-elements": "warning",
+								"qualified-headings": "warning",
+								"regex-selectors": "warning",
+								"rules-count": "warning",
+								"shorthand": "warning",
+								"star-property-hack": "warning",
+								"text-indent": "warning",
+								"underscore-property-hack": "warning",
+								"unique-headings": "warning",
+								"universal-selector": "warning",
+								"vendor-prefix": true,
+								"zero-units": "warning"
+							},
+							"gjslint_ignore":
+							[
+								110
+							],
+							"gjslint_options":
+							[
+							],
+							"javascript_linter": "jshint",
+							"jshint_options":
+							{
+								"browser": true,
+								"evil": true,
+								"regexdash": true,
+								"sub": true,
+								"trailing": true,
+								"wsh": true
+							},
+							"pep8": true,
+							"pep8_ignore":
+							[
+								"E501"
+							],
+							"perl_linter": "perlcritic",
+							"pyflakes_ignore":
+							[
+							],
+							"pyflakes_ignore_import_*": true,
+							"sublimelinter": true,
+							"sublimelinter_delay": 2,
+							"sublimelinter_disable":
+							[
+							],
+							"sublimelinter_executable_map":
+							{
+								"html": "C:\\dev\\tools\\tidy.exe"
+							},
+							"sublimelinter_fill_outlines": false,
+							"sublimelinter_gutter_marks": true,
+							"sublimelinter_gutter_marks_theme": "simple",
+							"sublimelinter_mark_style": "none",
+							"sublimelinter_notes": false,
+							"sublimelinter_objj_check_ascii": false,
+							"sublimelinter_popup_errors_on_save": false,
+							"sublimelinter_syntax_map":
+							{
+								"C++": "c",
+								"Python Django": "python",
+								"Ruby on Rails": "ruby"
+							},
+							"sublimelinter_wrap_find": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 900.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
