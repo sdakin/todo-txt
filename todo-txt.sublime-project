@@ -2,7 +2,7 @@
 	"folders":
 	[
 		{
-			"path": "/C/dev/projects/web/todo-txt",
+			"path": "./app",
             "file_exclude_patterns": ["*.sublime*"]
 		}
 	]

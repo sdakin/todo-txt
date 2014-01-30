@@ -1,0 +1,1132 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ta",
+				"task"
+			],
+			[
+				"tok",
+				"tokenize"
+			],
+			[
+				"Ta",
+				"TaskTokenizer"
+			],
+			[
+				"ti",
+				"titleDone"
+			],
+			[
+				"to",
+				"tokenType"
+			],
+			[
+				"task",
+				"TaskTokenizer"
+			],
+			[
+				"tas",
+				"TaskTokenizer"
+			],
+			[
+				"pro",
+				"processToken"
+			],
+			[
+				"comp",
+				"COMPLETED_FLAG_TOKEN"
+			],
+			[
+				"toke",
+				"tokenIndex"
+			],
+			[
+				"pr",
+				"PRE_TOKEN"
+			],
+			[
+				"ma",
+				"max-height"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"sav",
+				"saveTaskData"
+			],
+			[
+				"Tod",
+				"TodoApp"
+			],
+			[
+				"g",
+				"getQ"
+			],
+			[
+				"impo",
+				"importedTransactions"
+			],
+			[
+				"res",
+				"result"
+			],
+			[
+				"ext",
+				"extDescription"
+			],
+			[
+				"ex",
+				"extDescription"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"cal",
+				"calculateID"
+			],
+			[
+				"er",
+				"errResp"
+			],
+			[
+				"ca",
+				"categoryList"
+			],
+			[
+				"lo",
+				"loadCategoryList"
+			],
+			[
+				"s",
+				"success"
+			],
+			[
+				"obj",
+				"object"
+			],
+			[
+				"getD",
+				"getDBInterface"
+			],
+			[
+				"resu",
+				"resultCode"
+			],
+			[
+				"for",
+				"forEach"
+			],
+			[
+				"def",
+				"Deferred"
+			],
+			[
+				"sel",
+				"selIndex"
+			],
+			[
+				"getSele",
+				"getSelectedIndex"
+			],
+			[
+				"fil",
+				"fileList"
+			],
+			[
+				"file",
+				"filenames"
+			],
+			[
+				"imp",
+				"importFiles"
+			],
+			[
+				"ini",
+				"initEntry"
+			],
+			[
+				"up",
+				"updateUI"
+			],
+			[
+				"sett",
+				"settingName"
+			],
+			[
+				"tran",
+				"tranDirPath"
+			],
+			[
+				"create",
+				"createReader"
+			],
+			[
+				"dataDir",
+				"dataDirPath"
+			],
+			[
+				"getd",
+				"getDirQ"
+			],
+			[
+				"dat",
+				"dataDir"
+			],
+			[
+				"reu",
+				"resultQ"
+			],
+			[
+				"resul",
+				"resultQ"
+			],
+			[
+				"creat",
+				"createDatabase"
+			],
+			[
+				"l",
+				"label"
+			],
+			[
+				"Cate",
+				"CategoryList"
+			],
+			[
+				"call",
+				"callback"
+			],
+			[
+				"acc",
+				"acctList"
+			],
+			[
+				"ac",
+				"accts"
+			],
+			[
+				"so",
+				"sortAccounts"
+			],
+			[
+				"st",
+				"status"
+			],
+			[
+				"sa",
+				"saveObject"
+			],
+			[
+				"status",
+				"statuses"
+			],
+			[
+				"resp",
+				"response"
+			],
+			[
+				"DB",
+				"DBILocal"
+			],
+			[
+				"rea",
+				"readyState"
+			],
+			[
+				"Exp",
+				"ExpensesApp"
+			],
+			[
+				"del",
+				"deleteRequest"
+			],
+			[
+				"text",
+				"textchange"
+			],
+			[
+				"Ac",
+				"AccountMenu"
+			],
+			[
+				"eve",
+				"EventTarget"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"fie",
+				"FieldMapper"
+			],
+			[
+				"Tran",
+				"TransactionList"
+			],
+			[
+				"Acc",
+				"AccountList"
+			],
+			[
+				"padd",
+				"padding-right"
+			],
+			[
+				"sco",
+				"scoreData"
+			],
+			[
+				"gets",
+				"getSelectedClass"
+			],
+			[
+				"stud",
+				"studentData"
+			],
+			[
+				"log",
+				"loginBtn"
+			],
+			[
+				"use",
+				"userInfo"
+			],
+			[
+				"T",
+				"TeacherData"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"key",
+				"keyColumns"
+			],
+			[
+				"user",
+				"userData"
+			],
+			[
+				"add",
+				"addListener"
+			],
+			[
+				"current",
+				"currentDate"
+			],
+			[
+				"ap",
+				"appData"
+			],
+			[
+				"th",
+				"theSchoolApp"
+			],
+			[
+				"c",
+				"click"
+			],
+			[
+				"da",
+				"date-display"
+			],
+			[
+				"teach",
+				"teacher-module"
+			],
+			[
+				"curre",
+				"currentDate"
+			],
+			[
+				"wh",
+				"whereClause"
+			],
+			[
+				"is",
+				"isset"
+			],
+			[
+				"sc",
+				"scoreData"
+			],
+			[
+				"sea",
+				"searchCategory"
+			],
+			[
+				"se",
+				"searchCategory"
+			],
+			[
+				"categ",
+				"categories"
+			],
+			[
+				"col",
+				"colName"
+			],
+			[
+				"app",
+				"app-frame"
+			],
+			[
+				"slide",
+				"slideNum"
+			],
+			[
+				"sli",
+				"slideNum"
+			],
+			[
+				"scor",
+				"scoreData"
+			],
+			[
+				"get",
+				"getScoreCategories"
+			],
+			[
+				"sw",
+				"switchToPanel"
+			],
+			[
+				"artL",
+				"artLayerRef"
+			],
+			[
+				"cen",
+				"centerY"
+			],
+			[
+				"dra",
+				"drawLine"
+			],
+			[
+				"ri",
+				"right"
+			],
+			[
+				"cl",
+				"clearSelection"
+			],
+			[
+				"md",
+				"MDoc"
+			],
+			[
+				"center",
+				"centerX"
+			],
+			[
+				"dar",
+				"drawCircle"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/ui/dlgs/editTask.html",
+			"settings":
+			{
+				"buffer_size": 5981,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Searching 35 files for \"bootstrap\"\n\nC:\\dev\\projects\\web\\todo-txt\\app\\appMain.html:\n    2  <html>\n    3  <head>\n    4: <link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"css/bootstrap.min.css\"/>\n    5  \n    6  <title>Todo.txt</title>\n\nC:\\dev\\projects\\web\\todo-txt\\app\\css\\bootstrap.min.css:\n    1  /*!\n    2:  * Bootstrap v2.2.2\n    3   *\n    4   * Copyright 2012 Twitter, Inc\n\nC:\\dev\\projects\\web\\todo-txt\\app\\js\\app\\appMain.js:\n    9        \"jquery\": [],\n   10        \"jq.textchange\": [\"jquery\"],\n   11:       \"bootstrap\": [\"jquery\"]\n   12      },\n   13  \n   ..\n   15        \"jquery\": \"xlib/jq/jquery2.0.3.min\",\n   16        \"jq.textchange\": \"xlib/jq/jquery.textchange.min\",\n   17:       \"bootstrap\": \"xlib/tbs/js/bootstrap.min\"\n   18      }\n   19  });\n\nC:\\dev\\projects\\web\\todo-txt\\app\\js\\ui\\dlgs\\BaseDlg.js:\n    2  \n    3  define(\n    4: 	[\"xlib/EventTarget\", \"bootstrap\"],\n    5: 	function(EventTarget, bootstrap)\n    6  {\n    7  \n\nC:\\dev\\projects\\web\\todo-txt\\app\\js\\ui\\dlgs\\EditTaskDlg.js:\n    2  \n    3  define(\n    4:     [\"xlib/EventTarget\", \"data/Task\", \"bootstrap\", \"jq.textchange\"],\n    5:     function(EventTarget, Task, bootstrap, textchange)\n    6  {\n    7  \n\nC:\\dev\\projects\\web\\todo-txt\\app\\js\\xlib\\tbs\\css\\bootstrap.min.css:\n    1  /*!\n    2:  * Bootstrap v2.2.2\n    3   *\n    4   * Copyright 2012 Twitter, Inc\n\nC:\\dev\\projects\\web\\todo-txt\\app\\js\\xlib\\tbs\\js\\bootstrap.min.js:\n    1  /**\n    2: * Bootstrap.js by @fat & @mdo\n    3: * plugins: bootstrap-modal.js, bootstrap-dropdown.js, bootstrap-tab.js, bootstrap-tooltip.js, bootstrap-popover.js, bootstrap-alert.js, bootstrap-button.js\n    4  * Copyright 2012 Twitter, Inc.\n    5  * http://www.apache.org/licenses/LICENSE-2.0.txt\n\n18 matches across 7 files\n",
+			"settings":
+			{
+				"buffer_size": 1734,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "app/js/app/TodoApp.js",
+			"settings":
+			{
+				"buffer_size": 6459,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/js/ui/dlgs/EditTaskDlg.js",
+			"settings":
+			{
+				"buffer_size": 3816,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/appMain.html",
+			"settings":
+			{
+				"buffer_size": 1321,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/js/data/Task.js",
+			"settings":
+			{
+				"buffer_size": 4033,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/js/data/TaskTokenizer.js",
+			"settings":
+			{
+				"buffer_size": 4892,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/Steve/Downloads/test/Womens Health USA - Crave Worthy Haircuts + The Hot-Sex Bucket List January, (February 2014)/~Get Your Files Here/Important ! Readme.txt",
+		"/C/Users/Steve/Desktop/all.vcf",
+		"/C/Users/Steve/Dropbox/todo/todo.txt",
+		"/C/dev/projects/web/todo-txt/app/img/staroff.png",
+		"/C/dev/projects/web/todo-txt/todo-txt.sublime-project",
+		"/C/Users/Steve/Desktop/Amex0113-1013.csv",
+		"/C/Users/Steve/Downloads/ofx.qif",
+		"/C/dev/projects/web/expenses-old/js/lib/util.js",
+		"/C/Users/Steve/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Steve/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/C/dev/projects/web/fillanyform/server/Gruntfile.js",
+		"/C/dev/projects/web/expenses-old/js/data/dbi.js",
+		"/C/dev/projects/web/expenses/app/js/ui/common/all.js",
+		"/C/dev/projects/web/expenses-old/js/ui/common.js",
+		"/C/dev/projects/web/expenses/app/js/data/Account.js",
+		"/C/dev/projects/web/expenses/app/js/xlib/EventTarget.js",
+		"/C/dev/projects/web/expenses-old/ui/main.html",
+		"/C/dev/projects/web/expenses-old/ui/dlgs/alerts.html",
+		"/C/dev/projects/web/expenses-old/ui/import.html",
+		"/C/dev/projects/web/expenses/app/css/bootstrap.min.css",
+		"/C/dev/projects/web/expenses/app/js/xlib/tbs/js/bootstrap.min.js",
+		"/C/dev/projects/web/expenses-old/js/lib/bootstrap.min.js",
+		"/C/dev/projects/web/expenses/.git/config",
+		"/C/Users/Steve/AppData/Local/Temp/fz3temp-1/.htaccess 2",
+		"/C/Users/Steve/AppData/Local/Temp/fz3temp-1/.htaccess",
+		"/C/dev/projects/web/personal/index.php",
+		"/C/dev/projects/web/personal/resume.html",
+		"/C/Users/Steve/Desktop/serial#.txt",
+		"/C/dev/projects/web/UncleRays-old/ServerAdmin/Commander/Commander.cpp",
+		"/C/Users/Steve/Desktop/ToFile/MacLaptopToFile/timefunction.php",
+		"/K/steve/Documents/OldMacDocs/email/other/mbox-Cathy",
+		"/K/steve/Documents/OldMacDocs/Robin/Misc/Steve's poem",
+		"/C/dev/projects/web/tps/www/js/data/app.js",
+		"/C/dev/projects/web/tps/www/js/data/users.js",
+		"/C/dev/projects/web/tps/www/js/lib/ChangeManager.js",
+		"/C/dev/projects/web/tps/www/css/site.css",
+		"/C/dev/projects/web/Intentions/ws/inc/browser.php",
+		"/C/dev/projects/web/Intentions/index.php",
+		"/C/dev/projects/web/Intentions/data/analytics.sql",
+		"/C/dev/projects/web/Intentions/ws/inc/analytics.php",
+		"/C/dev/projects/web/tps/www/js/app.js",
+		"/C/dev/projects/web/tps/www/js/data/appData.js",
+		"/C/dev/projects/web/tps/www/js/lib/util.js",
+		"/C/dev/projects/web/mit/ws/getTaskLists.php",
+		"/C/Users/Steve/Desktop/quicksilver.gpx",
+		"/C/Users/Steve/Desktop/uvas.gpx",
+		"/C/Users/Steve/Desktop/uvasall.gpx",
+		"/C/Users/Steve/Desktop/uvaswaypoints.gpx",
+		"/C/dev/projects/web/Intentions/data/intentions-data.sql",
+		"/C/dev/projects/web/tps/yuidoc.json",
+		"/C/dev/projects/web/tps/school.html",
+		"/C/dev/projects/web/tps/js/app.js",
+		"/C/dev/projects/web/tps/data/tps_schema.sql",
+		"/C/dev/projects/web/tps/data-sql/tps_schema.sql",
+		"/C/dev/projects/web/tps/class.html",
+		"/C/dev/projects/web/tps/js/data/models.js",
+		"/C/dev/projects/web/tps/js/data/wsapi.js",
+		"/C/dev/sdd/mit/js/data/TaskDataMgr.js",
+		"/C/dev/projects/web/tps/js/lib/util.js",
+		"/C/dev/projects/web/tps/ws/inc/dbobj.php",
+		"/C/dev/projects/web/tps/js/lib/ChangeManager.js",
+		"/C/dev/projects/web/tps/student.html",
+		"/C/dev/projects/web/tps/teacher.html",
+		"/C/dev/projects/web/tps/index.php",
+		"/C/dev/projects/web/tps/ws/inc/analytics.php",
+		"/C/dev/projects/web/tps/ws/logevent.php",
+		"/C/dev/sdd/StartupOfYouSlides/soy.js",
+		"/C/dev/proj/hackathon/www/client-adapter/main.js",
+		"/C/dev/sdd/StartupOfYouSlides/contents.html",
+		"/C/dev/sdd/StartupOfYouSlides/filename",
+		"/C/dev/sdd/StartupOfYouSlides/filename.jpg",
+		"/C/dev/proj/rc-server/www/ws/inc/util.php",
+		"/C/dev/sdd/tps/ws/signup.php",
+		"/C/dev/sdd/tps/js/lib/util.js",
+		"/C/dev/sdd/intentions/data/intentions-schema.sql",
+		"/C/dev/sdd/tps/yuidoc.json",
+		"/C/dev/sdd/tps/docs/AdminInfo.txt",
+		"/C/dev/sdd/tps/ws/inc/db.php",
+		"/C/dev/sdd/intentions/inc/db.php",
+		"/C/dev/sdd/mandalas/PsJS/circleFun.jsx",
+		"/C/dev/sdd/mandalas/PsJS/Mandala.jsx",
+		"/C/dev/sdd/mandalas/PsJS/Mandala2.jsx",
+		"/C/Users/sdakin/Desktop/_templates-data.json",
+		"/C/Users/sdakin/Documents/circleFun.jsx",
+		"/C/Users/sdakin/Documents/Mandala2.jsx",
+		"/C/Users/sdakin/Desktop/ScriptingListenerJS.log",
+		"/C/dev/sdd/tps/js/data/models.js",
+		"/C/dev/sdd/mit/js/data/ChangeManager.js",
+		"/C/dev/sdd/intentions/app/src/data/DataManager.js"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"C:\\dev\\projects\\web\\todo-txt\\app",
+			"C:\\dev\\projects\\web\\expenses\\app",
+			"C:\\dev\\projects\\web\\tps\\www",
+			"C:\\dev\\sdd\\tps"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"invalidToken",
+			"END_TOKEN",
+			"bootstrap",
+			"halflings",
+			"glyph",
+			" @star",
+			"updateUI",
+			"dlgEditAccount",
+			"editAccount",
+			"EditAccountDlg",
+			"getImportFiles",
+			"FileReader",
+			"importData",
+			"alerts.html",
+			"dlgalert",
+			"Category",
+			"dbi",
+			"DBILocal",
+			"ResultObj",
+			"importfilelist",
+			"jquery",
+			"registerImportFilesDone",
+			"require(",
+			"importData",
+			"categoryList",
+			"importCategories",
+			"saveCategories",
+			"loadCategories",
+			"saveAllObjects",
+			"dbi",
+			"indexedDB",
+			"getSelectedText",
+			"\\t",
+			"tabs",
+			"\\t",
+			"setRules",
+			"saveRules",
+			"isSuccess",
+			"createTextRange",
+			"dbi",
+			"rules",
+			"getcate",
+			"categoryList",
+			"xlib/util",
+			"importcategories",
+			"getSelectedFile",
+			"debugger",
+			"fieldMappers",
+			"handleFileSelection",
+			"updateUI",
+			"importBtn",
+			"debugger",
+			"handleFileSelection",
+			"IMPORT_FILE",
+			"JSON",
+			"toJSON",
+			"chrome.storage.local",
+			"ImportTransDlg",
+			"this",
+			"callback",
+			"getImportFiles",
+			"chrome.",
+			"reader",
+			"app-alert-templates",
+			"main-dlg-hook",
+			"alerts",
+			"categories",
+			"findAccountCategory",
+			"sortCategoryArray",
+			"CategoryList",
+			"getCategories",
+			"choosing",
+			"BaseDlg",
+			"EditAccountDlg",
+			"dlgEditAccount",
+			"bootstrap",
+			"mainModule",
+			"getCategories",
+			"main-buttonbar",
+			"main-",
+			"main-buttonbar",
+			"module-header",
+			"getCategories",
+			"main.html",
+			"body",
+			"AccountData",
+			"setVersion",
+			"DBInterface",
+			"saveAccounts",
+			"updateUI",
+			"modal",
+			"AccountData",
+			"TransactionList",
+			"Transaction",
+			"CSVParser",
+			"TranPart",
+			"TranFilter",
+			"TranData",
+			"AccountData",
+			"EventTarget",
+			"APP",
+			"edit-icon",
+			" </",
+			"uploadFile",
+			"processCommand",
+			"dateformat",
+			"AppData",
+			"getScoreCategories",
+			"categorylist",
+			"setScore",
+			"Pre-Algebra",
+			"student.classes",
+			"modules",
+			"status",
+			"renderStudent",
+			"AppData",
+			"SCORE_STUDENT",
+			"getWhereClauseInfo",
+			"WSAPI.login",
+			"onTeacherStudentScored",
+			"UPDATE_CLASS_UI",
+			"TeacherModule.TEACHER_STUDENT_SCORED",
+			"updateDate",
+			"current-date",
+			"getscores",
+			"setScore",
+			"debugger",
+			"current-date"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"",
+			"dlgEditTask",
+			"EditTaskDlg",
+			"expDB",
+			"    ",
+			"Transaction",
+			", id:})",
+			"scoreData"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/ui/dlgs/editTask.html",
+					"settings":
+					{
+						"buffer_size": 5981,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								622,
+								633
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 540.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"settings":
+					{
+						"buffer_size": 1734,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										179,
+										188
+									],
+									[
+										317,
+										326
+									],
+									[
+										518,
+										527
+									],
+									[
+										696,
+										705
+									],
+									[
+										721,
+										730
+									],
+									[
+										870,
+										879
+									],
+									[
+										913,
+										922
+									],
+									[
+										1071,
+										1080
+									],
+									[
+										1140,
+										1149
+									],
+									[
+										1270,
+										1279
+									],
+									[
+										1422,
+										1431
+									],
+									[
+										1468,
+										1477
+									],
+									[
+										1488,
+										1497
+									],
+									[
+										1511,
+										1520
+									],
+									[
+										1529,
+										1538
+									],
+									[
+										1551,
+										1560
+									],
+									[
+										1573,
+										1582
+									],
+									[
+										1593,
+										1602
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								183,
+								183
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/js/app/TodoApp.js",
+					"settings":
+					{
+						"buffer_size": 6459,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1682,
+								1682
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 495.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/js/ui/dlgs/EditTaskDlg.js",
+					"settings":
+					{
+						"buffer_size": 3816,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2240,
+								2240
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/appMain.html",
+					"settings":
+					{
+						"buffer_size": 1321,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								393,
+								393
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/js/data/Task.js",
+					"settings":
+					{
+						"buffer_size": 4033,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								215,
+								241
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/js/data/TaskTokenizer.js",
+					"settings":
+					{
+						"buffer_size": 4892,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4340,
+								4340
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1080.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 223.0,
+	"status_bar_visible": true
+}
