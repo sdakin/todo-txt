@@ -95,6 +95,16 @@ define(["data/TaskTokenizer"], function(TaskTokenizer) {
         }
     };
 
+    Task.prototype.hasContext = function(context) {
+        var reStr = "@" + context + "[ \\n]*", re = new RegExp(reStr, "ig");
+        return re.test(this.rawData);
+    };
+
+    Task.prototype.hasProject = function(project) {
+        var reStr = "\\+" + project + "[ \\n]*", re = new RegExp(reStr, "ig");
+        return re.test(this.rawData);
+    };
+
     Task.prototype.compare = function(rhs) {
         // show non-completed tasks first
         if (this.isComplete() && !rhs.isComplete()) return 1;

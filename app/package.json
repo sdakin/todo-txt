@@ -1,0 +1,23 @@
+{
+  "name": "todo-txt",
+  "description": "A todo.txt task manager",
+  "version": "0.1.0",
+  "main": "./appMain.html",
+  "window": {
+    "title": "Todo.txt",
+    "toolbar": true,
+    "frame": true,
+    "width": 1000,
+    "height": 1000,
+    "min_width": 400,
+    "min_height": 200
+  },
+  "dependencies": {
+    "q": "~0.9",
+    "line-reader": "~0.2"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.10.0"
+  }
+}

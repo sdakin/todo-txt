@@ -1,8 +1,8 @@
 "use strict";
 
 define(
-    ["xlib/EventTarget", "data/Task", "data/TaskTokenizer", "bootstrap", "jq.textchange"],
-    function(EventTarget, Task, TaskTokenizer, bootstrap, textchange)
+    ["xlib/EventTarget", "data/Task", "data/TaskTokenizer", "bootstrap"],
+    function(EventTarget, Task, TaskTokenizer, bootstrap)
 {
 
     function EditTaskDlg(task) {
@@ -40,7 +40,7 @@ define(
                     self.completedDate = token;
                     break;
                 case TaskTokenizer.PRIORITY_TOKEN:
-                    self.priority = token;
+                    self.setPriority(token);
                     break;
                 case TaskTokenizer.CREATED_DATE_TOKEN:
                     self.createdDate = token;
@@ -86,6 +86,19 @@ define(
             this.task.setStar($imgStar.attr("src") == "img/star.png");
             this.fire(EditTaskDlg.SAVE_TASK);
         }
+    };
+
+    EditTaskDlg.prototype.setPriority = function(prio) {
+        var $items = $(".priority-menu li");
+        this.priority = prio;
+        $items.removeClass("active");
+        $items.each(function(index, item) {
+            var label = item.children[0].textContent;
+            if (label == prio) {
+                $(item).addClass("active");
+                return true;
+            }
+        });
     };
 
     EditTaskDlg.prototype.toggleStar = function() {

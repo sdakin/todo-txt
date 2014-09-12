@@ -5,10 +5,22 @@ define([], function() {
     function TaskList() {
         // published properties
         this.tasks = [];
+        this.projects = {};
+        this.contexts = {};
     }
 
     TaskList.prototype.addTask = function(newTask) {
         newTask.index = this.tasks.length;
+        var projectRE = /\+([^ \n]+)/g, contextRE = /@([^ \n]+)/g;
+        var projects, contexts;
+        while (projects = projectRE.exec(newTask.rawData)) {
+            var proj = projects[1].trim();
+            this.projects[proj.toLowerCase()] = proj;
+        }
+        while (contexts = contextRE.exec(newTask.rawData)) {
+            var context = contexts[1].trim();
+            this.contexts[context.toLowerCase()] = context;
+        }
         this.tasks.push(newTask);
     };
 

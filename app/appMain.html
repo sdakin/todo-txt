@@ -1,65 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" media="all" href="js/xlib/tbs/css/bootstrap.min.css"/>
-
-<title>Todo.txt</title>
-
-<style>
-html {
-    height: 100%;
-    border: 1px solid;
-}
-
-body {
-    height: 100%;
-    padding: 0px 10px 10px;
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-    font-size: 14px;
-}
-
-.task-item {
-    display: table-row;
-}
-
-.task-tags {
-    display: table-cell;
-}
-
-.tag-star {
-	display: none;
-}
-
-.task-contents {
-    display: table-cell;
-}
-
-.task-priority {
-    display: none;
-    width: 13px;
-    padding-left: 3px;
-    font-weight: bold;
-}
-
-.modal-header h2 {
-    font-size: 18px;
-    margin: 0;
-    line-height: 20px;
-}
-
-.modal-footer {
-    padding: 10px 15px 10px;
-}
-</style>
-
+    <link rel="stylesheet" type="text/css" media="all" href="js/xlib/tbs/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" media="all" href="css/app.css"/>
+    <title>Todo.txt</title>
 </head>
 
 <body>
 
-<div id="main">
-    <div id="main-dlg-hook"></div>
-    <div id="tasks"></div>
+<div id="main" class="container-fluid">
+    <div class="row">
+        <div class="col-xs-2">
+            <div class="lhpHeading">Projects</div>
+            <div class="lhpProjects">
+                <ul id="projects" class="nav nav-pills nav-stacked"></ul>
+            </div>
+            <div class="lhpHeading">Contexts</div>
+            <div class="lhpContexts">
+                <ul id="contexts" class="nav nav-pills nav-stacked"></ul>
+            </div>
+        </div>
+        <div class="col-xs-10">
+            <div id="tasks"></div>
+        </div>
+    </div>
 </div>
+<div id="main-dlg-hook"></div>
 
 <div id="app-alert-templates" style="display:none">
     <div class="alerts"></div>

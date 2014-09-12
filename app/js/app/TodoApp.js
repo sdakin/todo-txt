@@ -10,10 +10,12 @@ The main application module for Todo.txt.
 define(
     ["xlib/EventTarget", "lib/util",
      "ui/dlgs/AlertDlg", "ui/dlgs/EditTaskDlg",
-     "data/Task", "data/TaskList"],
+     "data/Task", "data/TaskList",
+     "app/AppPrefs"],
     function(EventTarget, util, 
              AlertDlg, EditTaskDlg,
-             Task, TaskList)
+             Task, TaskList,
+             AppPrefs)
 {
     /**
         The TodoApp object.
@@ -41,9 +43,13 @@ define(
         });
 
         initQ.done(function() {
-            self.getTodoFile().then(function() {
-                self.loadTodoFile();
-            });
+            self.prefs = new AppPrefs();
+            self.prefs.load();
+            self.loadTodoFile();
+
+            // self.getTodoFile().then(function() {
+            //     self.loadTodoFile();
+            // });
         });
     };
 
@@ -59,6 +65,42 @@ define(
             });
             self.editTaskDlg.show();
         });
+    };
+
+    TodoApp.prototype.filterTasksByContext = function(context) {
+        var self = this;
+        var $taskList = $("#tasks");
+        if (context == "All") {
+            $taskList.children().show();
+        } else {
+            $taskList.children().each(function(index, taskItem) {
+                var $taskItem = $(taskItem);
+                var index = $taskItem.attr('data-index');
+                var task = self.taskList.tasks[index];
+                if (task.hasContext(context))
+                    $taskItem.show();
+                else
+                    $taskItem.hide();
+            });
+        }
+    };
+
+    TodoApp.prototype.filterTasksByProject = function(project) {
+        var self = this;
+        var $taskList = $("#tasks");
+        if (project == "All") {
+            $taskList.children().show();
+        } else {
+            $taskList.children().each(function(index, taskItem) {
+                var $taskItem = $(taskItem);
+                var index = $taskItem.attr('data-index');
+                var task = self.taskList.tasks[index];
+                if (task.hasProject(project))
+                    $taskItem.show();
+                else
+                    $taskItem.hide();
+            });
+        }
     };
 
     TodoApp.prototype.getTodoFile = function(subDir) {
@@ -104,24 +146,42 @@ define(
         return resultQ.promise();
     };
 
+    TodoApp.prototype.loadProjectsAndContexts = function() {
+        var self = this;
+        var $projects = $("#projects");
+        $projects.empty();
+        $projects.append($('<li><a href="#">All</a></li>'));
+        Object.keys(self.taskList.projects).sort().forEach(function(project) {
+            $projects.append($('<li><a href="#">' + project + '</a></li>'));
+        });
+        $projects.find("a").click(function(e) {
+            self.filterTasksByProject(e.target.innerText);
+        });
+
+        var $contexts = $("#contexts");
+        $contexts.empty();
+        $contexts.append($('<li><a href="#">All</a></li>'));
+        Object.keys(self.taskList.contexts).sort().forEach(function(context) {
+            $contexts.append($('<li><a href="#">' + context + '</a></li>'));
+        });
+        $contexts.find("a").click(function(e) {
+            self.filterTasksByContext(e.target.innerText);
+        });
+    };
+
+
+    // test reading file: C:\Users\sdakin\Dropbox\todo\todo.txt
+
     TodoApp.prototype.loadTodoFile = function() {
         var self = this;
+        var lineReader = require('line-reader');
         self.taskList = new TaskList();
-        self.todoFile.file(function(file) {
-            var reader = new FileReader();
-            reader.onerror = function(e) {
-                console.error("error reading file: " + e);
-            };
-            reader.onloadend = function(e) {
-                var lines = e.target.result.split("\n");
-                lines.forEach(function(line) {
-                    if (line && line.length > 0)
-                        self.taskList.addTask(new Task(line));
-                });
-                self.reloadTasks();
-            };
-
-            reader.readAsText(file);
+        lineReader.eachLine(self.prefs.todoTxtFile, function(line) {
+            if (line && line.length > 0)
+                self.taskList.addTask(new Task(line));
+        }).then(function () {
+            self.loadProjectsAndContexts();
+            self.reloadTasks();
         });
     };
 

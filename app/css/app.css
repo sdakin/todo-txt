@@ -1,0 +1,55 @@
+html {
+    height: 100%;
+    border: 1px solid;
+}
+
+body {
+    padding: 0px 5px 10px;
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 14px;
+}
+
+.task-item {
+    display: table-row;
+}
+
+.task-tags {
+    display: table-cell;
+}
+
+.tag-star {
+	display: none;
+}
+
+.task-contents {
+    display: table-cell;
+}
+
+.task-priority {
+    display: none;
+    width: 13px;
+    padding-left: 3px;
+    font-weight: bold;
+}
+
+.modal-header h2 {
+    font-size: 18px;
+    margin: 0;
+    line-height: 20px;
+}
+
+.modal-footer {
+    padding: 10px 15px 10px;
+}
+
+#main {
+    padding-left: inherit;
+}
+
+.lhpProjects {
+    border: 1px solid black;
+}
+
+.lhpContexts {
+    border: 1px solid black;
+}

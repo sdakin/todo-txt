@@ -17,21 +17,22 @@ define([], function() {
     TaskTokenizer.CUSTOM_TOKEN = "CUSTOM_TOKEN";
 
     TaskTokenizer.prototype.tokenize = function(taskData, callback) {
-        var result = true;
+        var self = this, result = true;
         var tokens = taskData.split(" ");
         var curToken = TaskTokenizer.PRE_TOKEN;
         var tokenIndex = 0;
         var title = "", titleStarted = false, titleDone = false;
 
         for (var tokenIndex = 0 ; tokenIndex < tokens.length ; tokenIndex++) {
-            var token = tokens[tokenIndex];
+            var token = tokens[tokenIndex].trim();
             if (token.length > 0) {
+                self.parsedToken = token;
                 switch (curToken) {
                     case TaskTokenizer.PRE_TOKEN:
                         if (token == "x")
                             processToken(token, TaskTokenizer.COMPLETED_FLAG_TOKEN);
                         else if (isPriorityToken(token))
-                            processToken(token, TaskTokenizer.PRIORITY_TOKEN);
+                            processToken(self.parsedToken, TaskTokenizer.PRIORITY_TOKEN);
                         else if (isDateToken(token))
                             processToken(token, TaskTokenizer.CREATED_DATE_TOKEN);
                         else
@@ -47,7 +48,7 @@ define([], function() {
 
                     case TaskTokenizer.COMPLETED_DATE_TOKEN:
                         if (isPriorityToken(token))
-                            processToken(token, TaskTokenizer.PRIORITY_TOKEN);
+                            processToken(self.parsedToken, TaskTokenizer.PRIORITY_TOKEN);
                         else if (isDateToken(token))
                             processToken(token, TaskTokenizer.CREATED_DATE_TOKEN);
                         else
@@ -105,8 +106,13 @@ define([], function() {
         }
 
         function isPriorityToken(token) {
-            var re = /\([A-Z]\)/;
-            return re.test(token);
+            var re = /\(([A-Z])\)/;
+            var match = re.exec(token);
+            if (match && match.length > 1) {
+                self.parsedToken = match[1];
+                return true;
+            }
+            return false;
         }
 
         function isProjectToken(token) {
@@ -115,7 +121,13 @@ define([], function() {
 
         function processToken(token, tokenType) {
             curToken = tokenType;
-            var result = callback(token, tokenType);
+            if (curToken == TaskTokenizer.CUSTOM_TOKEN) {
+                if (token.substr(0, 5) === "prio:") {
+                    curToken = TaskTokenizer.PRIORITY_TOKEN;
+                    token = token.substr(5);
+                }
+            }
+            var result = callback(token, curToken);
             // if the callback returns true then stop the tokenization
             if (result === true) {
                 result = false;
