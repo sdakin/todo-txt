@@ -1,40 +1,24 @@
 <style>
-#dlgEditTask {
-	margin: auto;
-	width: auto;
-	left: 150px;
+.prioritySelector {
+    display:inline-flex;
 }
 
-#dlgEditTask .modal-body {
-	overflow-y: visible;
-	padding: 20px;
-}
-
-.modal-body form {
-	margin:0px;
-}
-
-.field_label {
-	display: inline-block;
-	width: 87px;
-	text-align: right;
-	padding-right: 5px;
+.prioritySelector .btn-group {
+    margin-right: 5px;
+    width: 74px;
+    display: inline-table;
 }
 
 .priority-menu {
-    min-width: 67px;
-    overflow-y: scroll;
-    top: inherit;
+    min-width: 59px;
+    overflow-y: auto;
     right: 0;
     left: inherit;
 }
 
 .priority-menu a {
-    width: 10px;
-}
-
-.errorMessage {
-	display:none;
+    width: 74px;
+    text-align: center;
 }
 
 #fldTitle {
@@ -49,125 +33,94 @@ input[type="text"].dateInput {
 }
 </style>
 
-<div id="dlgEditTask" class="modal displayhide">
-	<div class="templates" style="display:none">
-        <div class="dupeNameErr alert alert-block alert-error fade in">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            <p>Error: duplicate account name.</p>
-        </div>
-    </div>
-    
-    <div class="modal-header">
-        <h2>Edit Task</h2>
-    </div>
-    <div class="modal-body">
-        <div style="padding-bottom: 10px">
-            <button type="button" class="btn btn-complete"><img src="img/incomplete.png"></button>
-            <span style="margin-left: 5px">Completed date:</span>
-            <div class="btn-group">
-                <input id="fldCompletedDate" type="text" class="dateInput"/>
-                <button class="btn dropdown-toggle" data-toggle="dropdown">
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu">
-                    <!-- dropdown menu links -->
-                </ul>
-            </div>
-        </div>
-        <div style="display:inline-flex">
-            <div class="btn-group" style="margin-right: 5px;width: 74px;">
-                <button type="button" class="btn btn-star"><img src="img/staroff.png"></button>
-                <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" style="width:32px">
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu priority-menu" role="menu">
-                    <li><a href="#">A</a></li>
-                    <li><a href="#">B</a></li>
-                    <li><a href="#">C</a></li>
-                    <li><a href="#">D</a></li>
-                    <li><a href="#">E</a></li>
-                    <li><a href="#">F</a></li>
-                    <li><a href="#">G</a></li>
-                    <li><a href="#">H</a></li>
-                    <li><a href="#">I</a></li>
-                    <li><a href="#">J</a></li>
-                    <li><a href="#">K</a></li>
-                    <li><a href="#">L</a></li>
-                    <li><a href="#">M</a></li>
-                    <li><a href="#">N</a></li>
-                    <li><a href="#">O</a></li>
-                    <li><a href="#">P</a></li>
-                    <li><a href="#">Q</a></li>
-                    <li><a href="#">R</a></li>
-                    <li><a href="#">S</a></li>
-                    <li><a href="#">T</a></li>
-                    <li><a href="#">U</a></li>
-                    <li><a href="#">V</a></li>
-                    <li><a href="#">W</a></li>
-                    <li><a href="#">X</a></li>
-                    <li><a href="#">Y</a></li>
-                    <li><a href="#">Z</a></li>
-                </ul>
-            </div>
-            <div style="display:inline-block">
-                <!--input type="text" id="fldTitle" /-->
-                <textarea id="fldTitle" rows="3" style="resize:vertical"></textarea>
-            </div>
-        </div>
-        <div style="height: 30px">
-            <div class="pull-right">
-                <div class="btn-group">
-                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Project
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu project-menu"></ul>
-                </div>
-                <div class="btn-group">
-                    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Context
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu context-menu"></ul>
+<div id="dlgEditTask" class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        	<div class="templates" style="display:none">
+                <div class="dupeNameErr alert alert-block alert-error fade in">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <p>Error: duplicate account name.</p>
                 </div>
             </div>
-        </div>
-<!--         <form id="form-edit-account">
-            <div class="form_line">
-                <div class="field_label">Name </div>
+            
+            <div class="modal-header">
+                <h2>Edit Task</h2>
             </div>
-            <div class="form_line">
-                <div class="field_label">Type </div>
-                <div id="acct-type-selector" class="btn-group">
-                    <a class="btn dropdown-toggle" data-toggle="dropdown">
-                        <span class="acct-type-dropdown-label">Bank</span>
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a>Bank</a></li>
-                        <li><a>Cash</a></li>
-                        <li><a>Checking</a></li>
-                        <li><a>Credit Card</a></li>
-                        <li><a>Investment</a></li>
-                        <li><a>Savings</a></li>
-                        <li><a>Other</a></li>
-                    </ul>
+            <div class="modal-body">
+                <div style="padding-bottom: 10px">
+                    <button type="button" class="btn btn-complete"><img src="img/incomplete.png"></button>
+                    <span style="margin-left: 5px">Completed date:</span>
+                    <div class="btn-group">
+                        <input id="fldCompletedDate" type="text" class="dateInput"/>
+                        <button class="btn dropdown-toggle" data-toggle="dropdown">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <!-- dropdown menu links -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="prioritySelector">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-star"><img src="img/staroff.png"></button>
+                        <button type="button" class="btn dropdown-toggle" data-toggle="dropdown" style="width:32px">
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu priority-menu" role="menu">
+                            <li><a href="#">A</a></li>
+                            <li><a href="#">B</a></li>
+                            <li><a href="#">C</a></li>
+                            <li><a href="#">D</a></li>
+                            <li><a href="#">E</a></li>
+                            <li><a href="#">F</a></li>
+                            <li><a href="#">G</a></li>
+                            <li><a href="#">H</a></li>
+                            <li><a href="#">I</a></li>
+                            <li><a href="#">J</a></li>
+                            <li><a href="#">K</a></li>
+                            <li><a href="#">L</a></li>
+                            <li><a href="#">M</a></li>
+                            <li><a href="#">N</a></li>
+                            <li><a href="#">O</a></li>
+                            <li><a href="#">P</a></li>
+                            <li><a href="#">Q</a></li>
+                            <li><a href="#">R</a></li>
+                            <li><a href="#">S</a></li>
+                            <li><a href="#">T</a></li>
+                            <li><a href="#">U</a></li>
+                            <li><a href="#">V</a></li>
+                            <li><a href="#">W</a></li>
+                            <li><a href="#">X</a></li>
+                            <li><a href="#">Y</a></li>
+                            <li><a href="#">Z</a></li>
+                        </ul>
+                    </div>
+                    <div style="display:inline-block">
+                        <!--input type="text" id="fldTitle" /-->
+                        <textarea id="fldTitle" rows="3" style="resize:vertical"></textarea>
+                    </div>
+                </div>
+                <div style="height: 30px">
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Project
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu project-menu"></ul>
+                        </div>
+                        <div class="btn-group">
+                            <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">Context
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu context-menu"></ul>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="form_line form_line_other">
-                <div class="field_label">&nbsp;</div>
-                <input type="text" id="fldAcctTypeOther"/>
+            <div class="modal-footer">
+                <a class="btn">Cancel</a>
+                <a class="btn">Save</a>
             </div>
-            <div class="form_line">
-                <div class="field_label">Balance </div>
-                <input type="text" id="fldAcctBalance"/>
-            </div>
-            <div class="form_line form_line_last">
-                <div class="field_label">Bill due day </div>
-                <input type="text" id="fldAcctBillDueDate"/>
-            </div>
-        </form>
- -->    </div>
-    <div class="modal-footer">
-        <a class="btn">Cancel</a>
-        <a class="btn">Save</a>
+        </div>
     </div>
 </div>
