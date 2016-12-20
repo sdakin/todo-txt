@@ -20,7 +20,6 @@ define([], function() {
         var self = this, result = true;
         var tokens = taskData.split(" ");
         var curToken = TaskTokenizer.PRE_TOKEN;
-        var tokenIndex = 0;
         var title = "", titleStarted = false, titleDone = false;
 
         for (var tokenIndex = 0 ; tokenIndex < tokens.length ; tokenIndex++) {
@@ -145,7 +144,7 @@ define([], function() {
             result = false;
             tokenIndex = tokens.length;
         }
-    }
+    };
 
     return TaskTokenizer;
 });

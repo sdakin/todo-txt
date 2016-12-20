@@ -1,10 +1,13 @@
 "use strict";
 
-define(['jquery', 'exports'], function($, exports) {
+define(["jquery", "exports"], function($, exports) {
     // see: http://stackoverflow.com/questions/499126/jquery-set-cursor-position-in-text-area
     //
-    // example: $('#elem').selectRange(3,5);
+    // example: $("#elem").selectRange(3,5);
     $.fn.selectRange = function(start, end) {
+        if (end === undefined) {
+            end = start;
+        }
         return this.each(function() {
             if (this.setSelectionRange) {
                 this.focus();
@@ -12,20 +15,20 @@ define(['jquery', 'exports'], function($, exports) {
             } else if (this.createTextRange) {
                 var range = this.createTextRange();
                 range.collapse(true);
-                range.moveEnd('character', end);
-                range.moveStart('character', start);
+                range.moveEnd("character", end);
+                range.moveStart("character", start);
                 range.select();
             }
         });
     };
 
-    if (typeof String.prototype.startsWith != 'function') {
+    if (typeof String.prototype.startsWith != "function") {
         String.prototype.startsWith = function (str){
             return this.substring(0, str.length) == str;
         };
     }
 
-    if (typeof String.prototype.endsWith != 'function') {
+    if (typeof String.prototype.endsWith != "function") {
         String.prototype.endsWith = function (str){
             return this.slice(-str.length) == str;
         };

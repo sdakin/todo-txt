@@ -4,12 +4,60 @@
 		"selected_items":
 		[
 			[
-				"ta",
-				"task"
+				"sav",
+				"savedSelectionPos"
+			],
+			[
+				"sa",
+				"savedSelectionPos"
+			],
+			[
+				"key",
+				"keyCode"
+			],
+			[
+				"get",
+				"getWidthOfText"
+			],
+			[
+				"data",
+				"dateSortVal"
+			],
+			[
+				"date",
+				"dateSortVal"
+			],
+			[
+				"pro",
+				"prototype"
+			],
+			[
+				"con",
+				"contexts"
+			],
+			[
+				"task",
+				"taskList"
+			],
+			[
+				"T",
+				"Task"
+			],
+			[
+				"pad",
+				"padding-left"
+			],
+			[
+				"P",
+				"PRIORITY_TOKEN"
 			],
 			[
 				"tok",
-				"tokenize"
+				"token"
+			],
+			[
+				"ta",
+				"task"
 			],
 			[
 				"Ta",
@@ -24,16 +72,8 @@
 				"tokenType"
 			],
 			[
-				"task",
-				"TaskTokenizer"
-			],
-			[
 				"tas",
 				"TaskTokenizer"
-			],
-			[
-				"pro",
-				"processToken"
 			],
 			[
 				"comp",
@@ -58,10 +98,6 @@
 			[
 				"in",
 				"inline-block"
-			],
-			[
-				"sav",
-				"saveTaskData"
 			],
 			[
 				"Tod",
@@ -224,10 +260,6 @@
 				"status"
 			],
 			[
-				"sa",
-				"saveObject"
-			],
-			[
 				"status",
 				"statuses"
 			],
@@ -304,16 +336,8 @@
 				"userInfo"
 			],
 			[
-				"T",
-				"TeacherData"
-			],
-			[
 				"pass",
 				"password"
-			],
-			[
-				"key",
-				"keyColumns"
 			],
 			[
 				"user",
@@ -396,10 +420,6 @@
 				"scoreData"
 			],
 			[
-				"get",
-				"getScoreCategories"
-			],
-			[
 				"sw",
 				"switchToPanel"
 			],
@@ -440,36 +460,57 @@
 	"buffers":
 	[
 		{
-			"file": "app/ui/dlgs/editTask.html",
+			"contents": "http://news.google.com/news/url?sr=1&sa=t&ct2=us%2F0_6_g_11_0_t&gid=INT&bvm=section&usg=AFQjCNGKsKSfg2mjezw3GiwoxHR2zBGuKg&did=-981780011092329737&sig2=3Td5Q4Er_P1sgWrkjLtX_Q&ei=l94QVICvGq3MmQLi8YGICg&rt=HOMEPAGE&vm=STANDARD&authuser=0&url=http%3A%2F%2Fwww.theguardian.com%2Flifeandstyle%2F2014%2Fsep%2F06%2Fwomens-breasts-laura-dodsworth-photography\n\n\nhttp://news.google.com/news/url?sr=1&sa=t&ct2=us%2F0_6_g_1_0_t&gid=INT&bvm=section&usg=AFQjCNFVDYzJluGHCh8CKW6ToJLysv5cUg&did=-6365990263984509518&sig2=TMaUV3JAeUKzwom0NB_f6A&cid=52778597634417&ei=l94QVICvGq3MmQLi8YGICg&rt=HOMEPAGE&vm=STANDARD&authuser=0&url=http%3A%2F%2Fwww.foxnews.com%2Fentertainment%2F2014%2F09%2F04%2Fleaked-nude-photos-jennifer-lawrence-kate-upton-to-be-showcased-at-art-gallery%2F\n",
 			"settings":
 			{
-				"buffer_size": 5981,
-				"line_ending": "Windows"
+				"buffer_size": 758,
+				"line_ending": "Windows",
+				"name": "http://news.google.com/news/url?sr=1&sa=t&ct2=us%2"
 			}
 		},
 		{
-			"contents": "Searching 35 files for \"bootstrap\"\n\nC:\\dev\\projects\\web\\todo-txt\\app\\appMain.html:\n    2  <html>\n    3  <head>\n    4: <link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"css/bootstrap.min.css\"/>\n    5  \n    6  <title>Todo.txt</title>\n\nC:\\dev\\projects\\web\\todo-txt\\app\\css\\bootstrap.min.css:\n    1  /*!\n    2:  * Bootstrap v2.2.2\n    3   *\n    4   * Copyright 2012 Twitter, Inc\n\nC:\\dev\\projects\\web\\todo-txt\\app\\js\\app\\appMain.js:\n    9        \"jquery\": [],\n   10        \"jq.textchange\": [\"jquery\"],\n   11:       \"bootstrap\": [\"jquery\"]\n   12      },\n   13  \n   ..\n   15        \"jquery\": \"xlib/jq/jquery2.0.3.min\",\n   16        \"jq.textchange\": \"xlib/jq/jquery.textchange.min\",\n   17:       \"bootstrap\": \"xlib/tbs/js/bootstrap.min\"\n   18      }\n   19  });\n\nC:\\dev\\projects\\web\\todo-txt\\app\\js\\ui\\dlgs\\BaseDlg.js:\n    2  \n    3  define(\n    4: 	[\"xlib/EventTarget\", \"bootstrap\"],\n    5: 	function(EventTarget, bootstrap)\n    6  {\n    7  \n\nC:\\dev\\projects\\web\\todo-txt\\app\\js\\ui\\dlgs\\EditTaskDlg.js:\n    2  \n    3  define(\n    4:     [\"xlib/EventTarget\", \"data/Task\", \"bootstrap\", \"jq.textchange\"],\n    5:     function(EventTarget, Task, bootstrap, textchange)\n    6  {\n    7  \n\nC:\\dev\\projects\\web\\todo-txt\\app\\js\\xlib\\tbs\\css\\bootstrap.min.css:\n    1  /*!\n    2:  * Bootstrap v2.2.2\n    3   *\n    4   * Copyright 2012 Twitter, Inc\n\nC:\\dev\\projects\\web\\todo-txt\\app\\js\\xlib\\tbs\\js\\bootstrap.min.js:\n    1  /**\n    2: * Bootstrap.js by @fat & @mdo\n    3: * plugins: bootstrap-modal.js, bootstrap-dropdown.js, bootstrap-tab.js, bootstrap-tooltip.js, bootstrap-popover.js, bootstrap-alert.js, bootstrap-button.js\n    4  * Copyright 2012 Twitter, Inc.\n    5  * http://www.apache.org/licenses/LICENSE-2.0.txt\n\n18 matches across 7 files\n",
+			"file": "app/ui/dlgs/editTask.html",
 			"settings":
 			{
-				"buffer_size": 1734,
-				"line_ending": "Windows",
-				"name": "Find Results",
-				"scratch": true
+				"buffer_size": 5143,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "app/js/app/TodoApp.js",
 			"settings":
 			{
-				"buffer_size": 6459,
+				"buffer_size": 8276,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "app/js/ui/dlgs/EditTaskDlg.js",
+			"file": "app/prefs.json",
 			"settings":
 			{
-				"buffer_size": 3816,
+				"buffer_size": 74,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Searching 963 files for \"textchange\"\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\js\\app\\appMain.js:\n    8      \"shim\": {\n    9        \"jquery\": [],\n   10:       \"jq.textchange\": [\"jquery\"],\n   11        \"bootstrap\": [\"jquery\"]\n   12      },\n   ..\n   14      \"paths\": {\n   15        \"jquery\": \"xlib/jq/jquery2.0.3.min\",\n   16:       \"jq.textchange\": \"xlib/jq/jquery.textchange.min\",\n   17        \"bootstrap\": \"xlib/tbs/js/bootstrap.min\"\n   18      }\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\js\\ui\\dlgs\\EditTaskDlg.js:\n    2  \n    3  define(\n    4:     [\"xlib/EventTarget\", \"data/Task\", \"data/TaskTokenizer\", \"bootstrap\", \"jq.textchange\"],\n    5:     function(EventTarget, Task, TaskTokenizer, bootstrap, textchange)\n    6  {\n    7  \n    .\n   26          //     $(\"#acct-type-selector .acct-type-dropdown-label\").text(acctType);\n   27          // });\n   28:         // $(\"#fldAcctName\").unbind(\"textchange\").bind(\"textchange\", function(e) {\n   29          //     self.updateUI();\n   30          // });\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\js\\xlib\\jq\\jquery.textchange.min.js:\n    1  /*!\n    2:  * jQuery TextChange Plugin\n    3   * http://www.zurb.com/playground/jquery-text-change-custom-event\n    4   *\n    .\n    6   * Released under the MIT License\n    7   */\n    8:  (function(a){a.event.special.textchange={setup:function(){a(this).data(\"lastValue\",this.contentEditable===\"true\"?a(this).html():a(this).val());a(this).bind(\"keyup.textchange\",a.event.special.textchange.handler);a(this).bind(\"cut.textchange paste.textchange input.textchange\",a.event.special.textchange.delayedHandler)},teardown:function(){a(this).unbind(\".textchange\")},handler:function(){a.event.special.textchange.triggerIfChanged(a(this))},delayedHandler:function(){var c=a(this);setTimeout(function(){a.event.special.textchange.triggerIfChanged(c)},\n    9:  25)},triggerIfChanged:function(a){var b=a[0].contentEditable===\"true\"?a.html():a.val();b!==a.data(\"lastValue\")&&(a.trigger(\"textchange\",[a.data(\"lastValue\")]),a.data(\"lastValue\",b))}};a.event.special.hastext={setup:function(){a(this).bind(\"textchange\",a.event.special.hastext.handler)},teardown:function(){a(this).unbind(\"textchange\",a.event.special.hastext.handler)},handler:function(c,b){b===\"\"&&b!==a(this).val()&&a(this).trigger(\"hastext\")}};a.event.special.notext={setup:function(){a(this).bind(\"textchange\",\n   10:  a.event.special.notext.handler)},teardown:function(){a(this).unbind(\"textchange\",a.event.special.notext.handler)},handler:function(c,b){a(this).val()===\"\"&&a(this).val()!==b&&a(this).trigger(\"notext\")}}})(jQuery);\n\n23 matches across 3 files\n\n\nSearching 963 files for \"bootstrap\"\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\appMain.html:\n    2  <html>\n    3  <head>\n    4: <link rel=\"stylesheet\" type=\"text/css\" media=\"all\" href=\"js/xlib/tbs/css/bootstrap.min.css\"/>\n    5  \n    6  <title>Todo.txt</title>\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\js\\app\\appMain.js:\n    9        \"jquery\": [],\n   10        \"jq.textchange\": [\"jquery\"],\n   11:       \"bootstrap\": [\"jquery\"]\n   12      },\n   13  \n   ..\n   15        \"jquery\": \"xlib/jq/jquery2.0.3.min\",\n   16        \"jq.textchange\": \"xlib/jq/jquery.textchange.min\",\n   17:       \"bootstrap\": \"xlib/tbs/js/bootstrap.min\"\n   18      }\n   19  });\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\js\\ui\\dlgs\\BaseDlg.js:\n    2  \n    3  define(\n    4: \t[\"xlib/EventTarget\", \"bootstrap\"],\n    5: \tfunction(EventTarget, bootstrap)\n    6  {\n    7  \n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\js\\ui\\dlgs\\EditTaskDlg.js:\n    2  \n    3  define(\n    4:     [\"xlib/EventTarget\", \"data/Task\", \"data/TaskTokenizer\", \"bootstrap\"],\n    5:     function(EventTarget, Task, TaskTokenizer, bootstrap)\n    6  {\n    7  \n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\js\\xlib\\tbs\\css\\bootstrap-responsive.css:\n    1  /*!\n    2:  * Bootstrap Responsive v2.3.2\n    3   *\n    4   * Copyright 2013 Twitter, Inc\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\js\\xlib\\tbs\\css\\bootstrap-responsive.min.css:\n    1  /*!\n    2:  * Bootstrap Responsive v2.3.2\n    3   *\n    4   * Copyright 2013 Twitter, Inc\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\js\\xlib\\tbs\\css\\bootstrap.css:\n    1  /*!\n    2:  * Bootstrap v2.3.2\n    3   *\n    4   * Copyright 2013 Twitter, Inc\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\js\\xlib\\tbs\\css\\bootstrap.min.css:\n    1  /*!\n    2:  * Bootstrap v2.3.2\n    3   *\n    4   * Copyright 2013 Twitter, Inc\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\js\\xlib\\tbs\\js\\bootstrap.js:\n    1  /* ===================================================\n    2:  * bootstrap-transition.js v2.3.2\n    3:  * http://getbootstrap.com/2.3.2/javascript.html#transitions\n    4   * ===================================================\n    5   * Copyright 2013 Twitter, Inc.\n    .\n   33        var transitionEnd = (function () {\n   34  \n   35:         var el = document.createElement('bootstrap')\n   36            , transEndEventNames = {\n   37                 'WebkitTransition' : 'webkitTransitionEnd'\n   ..\n   59  \n   60  }(window.jQuery);/* ==========================================================\n   61:  * bootstrap-alert.js v2.3.2\n   62:  * http://getbootstrap.com/2.3.2/javascript.html#alerts\n   63   * ==========================================================\n   64   * Copyright 2013 Twitter, Inc.\n   ..\n  157  \n  158  }(window.jQuery);/* ============================================================\n  159:  * bootstrap-button.js v2.3.2\n  160:  * http://getbootstrap.com/2.3.2/javascript.html#buttons\n  161   * ============================================================\n  162   * Copyright 2013 Twitter, Inc.\n  ...\n  261  \n  262  }(window.jQuery);/* ==========================================================\n  263:  * bootstrap-carousel.js v2.3.2\n  264:  * http://getbootstrap.com/2.3.2/javascript.html#carousel\n  265   * ==========================================================\n  266   * Copyright 2013 Twitter, Inc.\n  ...\n  467  \n  468  }(window.jQuery);/* =============================================================\n  469:  * bootstrap-collapse.js v2.3.2\n  470:  * http://getbootstrap.com/2.3.2/javascript.html#collapse\n  471   * =============================================================\n  472   * Copyright 2013 Twitter, Inc.\n  ...\n  633  \n  634  }(window.jQuery);/* ============================================================\n  635:  * bootstrap-dropdown.js v2.3.2\n  636:  * http://getbootstrap.com/2.3.2/javascript.html#dropdowns\n  637   * ============================================================\n  638   * Copyright 2013 Twitter, Inc.\n  ...\n  802  }(window.jQuery);\n  803  /* =========================================================\n  804:  * bootstrap-modal.js v2.3.2\n  805:  * http://getbootstrap.com/2.3.2/javascript.html#modals\n  806   * =========================================================\n  807   * Copyright 2013 Twitter, Inc.\n  ...\n 1049  }(window.jQuery);\n 1050  /* ===========================================================\n 1051:  * bootstrap-tooltip.js v2.3.2\n 1052:  * http://getbootstrap.com/2.3.2/javascript.html#tooltips\n 1053   * Inspired by the original jQuery.tipsy by Jason Frame\n 1054   * ===========================================================\n ....\n 1410  }(window.jQuery);\n 1411  /* ===========================================================\n 1412:  * bootstrap-popover.js v2.3.2\n 1413:  * http://getbootstrap.com/2.3.2/javascript.html#popovers\n 1414   * ===========================================================\n 1415   * Copyright 2013 Twitter, Inc.\n ....\n 1442  \n 1443  \n 1444:   /* NOTE: POPOVER EXTENDS BOOTSTRAP-TOOLTIP.js\n 1445       ========================================== */\n 1446  \n ....\n 1524  }(window.jQuery);\n 1525  /* =============================================================\n 1526:  * bootstrap-scrollspy.js v2.3.2\n 1527:  * http://getbootstrap.com/2.3.2/javascript.html#scrollspy\n 1528   * =============================================================\n 1529   * Copyright 2013 Twitter, Inc.\n ....\n 1685  \n 1686  }(window.jQuery);/* ========================================================\n 1687:  * bootstrap-tab.js v2.3.2\n 1688:  * http://getbootstrap.com/2.3.2/javascript.html#tabs\n 1689   * ========================================================\n 1690   * Copyright 2013 Twitter, Inc.\n ....\n 1828  \n 1829  }(window.jQuery);/* =============================================================\n 1830:  * bootstrap-typeahead.js v2.3.2\n 1831:  * http://getbootstrap.com/2.3.2/javascript.html#typeahead\n 1832   * =============================================================\n 1833   * Copyright 2013 Twitter, Inc.\n ....\n 2163  }(window.jQuery);\n 2164  /* ==========================================================\n 2165:  * bootstrap-affix.js v2.3.2\n 2166:  * http://getbootstrap.com/2.3.2/javascript.html#affix\n 2167   * ==========================================================\n 2168   * Copyright 2013 Twitter, Inc.\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\js\\xlib\\tbs\\js\\bootstrap.min.js:\n    1  /*!\n    2: * Bootstrap.js by @fat & @mdo\n    3  * Copyright 2013 Twitter, Inc.\n    4  * http://www.apache.org/licenses/LICENSE-2.0.txt\n    5  */\n    6: !function(e){\"use strict\";e(function(){e.support.transition=function(){var e=function(){var e=document.createElement(\"bootstrap\"),t={WebkitTransition:\"webkitTransitionEnd\",MozTransition:\"transitionend\",OTransition:\"oTransitionEnd otransitionend\",transition:\"transitionend\"},n;for(n in t)if(e.style[n]!==undefined)return t[n]}();return e&&{end:e}}()})}(window.jQuery),!function(e){\"use strict\";var t='[data-dismiss=\"alert\"]',n=function(n){e(n).on(\"click\",t,this.close)};n.prototype.close=function(t){function s(){i.trigger(\"closed\").remove()}var n=e(this),r=n.attr(\"data-target\"),i;r||(r=n.attr(\"href\"),r=r&&r.replace(/.*(?=#[^\\s]*$)/,\"\")),i=e(r),t&&t.preventDefault(),i.length||(i=n.hasClass(\"alert\")?n:n.parent()),i.trigger(t=e.Event(\"close\"));if(t.isDefaultPrevented())return;i.removeClass(\"in\"),e.support.transition&&i.hasClass(\"fade\")?i.on(e.support.transition.end,s):s()};var r=e.fn.alert;e.fn.alert=function(t){return this.each(function(){var r=e(this),i=r.data(\"alert\");i||r.data(\"alert\",i=new n(this)),typeof t==\"string\"&&i[t].call(r)})},e.fn.alert.Constructor=n,e.fn.alert.noConflict=function(){return e.fn.alert=r,this},e(document).on(\"click.alert.data-api\",t,n.prototype.close)}(window.jQuery),!function(e){\"use strict\";var t=function(t,n){this.$element=e(t),this.options=e.extend({},e.fn.button.defaults,n)};t.prototype.setState=function(e){var t=\"disabled\",n=this.$element,r=n.data(),i=n.is(\"input\")?\"val\":\"html\";e+=\"Text\",r.resetText||n.data(\"resetText\",n[i]()),n[i](r[e]||this.options[e]),setTimeout(function(){e==\"loadingText\"?n.addClass(t).attr(t,t):n.removeClass(t).removeAttr(t)},0)},t.prototype.toggle=function(){var e=this.$element.closest('[data-toggle=\"buttons-radio\"]');e&&e.find(\".active\").removeClass(\"active\"),this.$element.toggleClass(\"active\")};var n=e.fn.button;e.fn.button=function(n){return this.each(function(){var r=e(this),i=r.data(\"button\"),s=typeof n==\"object\"&&n;i||r.data(\"button\",i=new t(this,s)),n==\"toggle\"?i.toggle():n&&i.setState(n)})},e.fn.button.defaults={loadingText:\"loading...\"},e.fn.button.Constructor=t,e.fn.button.noConflict=function(){return e.fn.button=n,this},e(document).on(\"click.button.data-api\",\"[data-toggle^=button]\",function(t){var n=e(t.target);n.hasClass(\"btn\")||(n=n.closest(\".btn\")),n.button(\"toggle\")})}(window.jQuery),!function(e){\"use strict\";var t=function(t,n){this.$element=e(t),this.$indicators=this.$element.find(\".carousel-indicators\"),this.options=n,this.options.pause==\"hover\"&&this.$element.on(\"mouseenter\",e.proxy(this.pause,this)).on(\"mouseleave\",e.proxy(this.cycle,this))};t.prototype={cycle:function(t){return t||(this.paused=!1),this.interval&&clearInterval(this.interval),this.options.interval&&!this.paused&&(this.interval=setInterval(e.proxy(this.next,this),this.options.interval)),this},getActiveIndex:function(){return this.$active=this.$element.find(\".item.active\"),this.$items=this.$active.parent().children(),this.$items.index(this.$active)},to:function(t){var n=this.getActiveIndex(),r=this;if(t>this.$items.length-1||t<0)return;return this.sliding?this.$element.one(\"slid\",function(){r.to(t)}):n==t?this.pause().cycle():this.slide(t>n?\"next\":\"prev\",e(this.$items[t]))},pause:function(t){return t||(this.paused=!0),this.$element.find(\".next, .prev\").length&&e.support.transition.end&&(this.$element.trigger(e.support.transition.end),this.cycle(!0)),clearInterval(this.interval),this.interval=null,this},next:function(){if(this.sliding)return;return this.slide(\"next\")},prev:function(){if(this.sliding)return;return this.slide(\"prev\")},slide:function(t,n){var r=this.$element.find(\".item.active\"),i=n||r[t](),s=this.interval,o=t==\"next\"?\"left\":\"right\",u=t==\"next\"?\"first\":\"last\",a=this,f;this.sliding=!0,s&&this.pause(),i=i.length?i:this.$element.find(\".item\")[u](),f=e.Event(\"slide\",{relatedTarget:i[0],direction:o});if(i.hasClass(\"active\"))return;this.$indicators.length&&(this.$indicators.find(\".active\").removeClass(\"active\"),this.$element.one(\"slid\",function(){var t=e(a.$indicators.children()[a.getActiveIndex()]);t&&t.addClass(\"active\")}));if(e.support.transition&&this.$element.hasClass(\"slide\")){this.$element.trigger(f);if(f.isDefaultPrevented())return;i.addClass(t),i[0].offsetWidth,r.addClass(o),i.addClass(o),this.$element.one(e.support.transition.end,function(){i.removeClass([t,o].join(\" \")).addClass(\"active\"),r.removeClass([\"active\",o].join(\" \")),a.sliding=!1,setTimeout(function(){a.$element.trigger(\"slid\")},0)})}else{this.$element.trigger(f);if(f.isDefaultPrevented())return;r.removeClass(\"active\"),i.addClass(\"active\"),this.sliding=!1,this.$element.trigger(\"slid\")}return s&&this.cycle(),this}};var n=e.fn.carousel;e.fn.carousel=function(n){return this.each(function(){var r=e(this),i=r.data(\"carousel\"),s=e.extend({},e.fn.carousel.defaults,typeof n==\"object\"&&n),o=typeof n==\"string\"?n:s.slide;i||r.data(\"carousel\",i=new t(this,s)),typeof n==\"number\"?i.to(n):o?i[o]():s.interval&&i.pause().cycle()})},e.fn.carousel.defaults={interval:5e3,pause:\"hover\"},e.fn.carousel.Constructor=t,e.fn.carousel.noConflict=function(){return e.fn.carousel=n,this},e(document).on(\"click.carousel.data-api\",\"[data-slide], [data-slide-to]\",function(t){var n=e(this),r,i=e(n.attr(\"data-target\")||(r=n.attr(\"href\"))&&r.replace(/.*(?=#[^\\s]+$)/,\"\")),s=e.extend({},i.data(),n.data()),o;i.carousel(s),(o=n.attr(\"data-slide-to\"))&&i.data(\"carousel\").pause().to(o).cycle(),t.preventDefault()})}(window.jQuery),!function(e){\"use strict\";var t=function(t,n){this.$element=e(t),this.options=e.extend({},e.fn.collapse.defaults,n),this.options.parent&&(this.$parent=e(this.options.parent)),this.options.toggle&&this.toggle()};t.prototype={constructor:t,dimension:function(){var e=this.$element.hasClass(\"width\");return e?\"width\":\"height\"},show:function(){var t,n,r,i;if(this.transitioning||this.$element.hasClass(\"in\"))return;t=this.dimension(),n=e.camelCase([\"scroll\",t].join(\"-\")),r=this.$parent&&this.$parent.find(\"> .accordion-group > .in\");if(r&&r.length){i=r.data(\"collapse\");if(i&&i.transitioning)return;r.collapse(\"hide\"),i||r.data(\"collapse\",null)}this.$element[t](0),this.transition(\"addClass\",e.Event(\"show\"),\"shown\"),e.support.transition&&this.$element[t](this.$element[0][n])},hide:function(){var t;if(this.transitioning||!this.$element.hasClass(\"in\"))return;t=this.dimension(),this.reset(this.$element[t]()),this.transition(\"removeClass\",e.Event(\"hide\"),\"hidden\"),this.$element[t](0)},reset:function(e){var t=this.dimension();return this.$element.removeClass(\"collapse\")[t](e||\"auto\")[0].offsetWidth,this.$element[e!==null?\"addClass\":\"removeClass\"](\"collapse\"),this},transition:function(t,n,r){var i=this,s=function(){n.type==\"show\"&&i.reset(),i.transitioning=0,i.$element.trigger(r)};this.$element.trigger(n);if(n.isDefaultPrevented())return;this.transitioning=1,this.$element[t](\"in\"),e.support.transition&&this.$element.hasClass(\"collapse\")?this.$element.one(e.support.transition.end,s):s()},toggle:function(){this[this.$element.hasClass(\"in\")?\"hide\":\"show\"]()}};var n=e.fn.collapse;e.fn.collapse=function(n){return this.each(function(){var r=e(this),i=r.data(\"collapse\"),s=e.extend({},e.fn.collapse.defaults,r.data(),typeof n==\"object\"&&n);i||r.data(\"collapse\",i=new t(this,s)),typeof n==\"string\"&&i[n]()})},e.fn.collapse.defaults={toggle:!0},e.fn.collapse.Constructor=t,e.fn.collapse.noConflict=function(){return e.fn.collapse=n,this},e(document).on(\"click.collapse.data-api\",\"[data-toggle=collapse]\",function(t){var n=e(this),r,i=n.attr(\"data-target\")||t.preventDefault()||(r=n.attr(\"href\"))&&r.replace(/.*(?=#[^\\s]+$)/,\"\"),s=e(i).data(\"collapse\")?\"toggle\":n.data();n[e(i).hasClass(\"in\")?\"addClass\":\"removeClass\"](\"collapsed\"),e(i).collapse(s)})}(window.jQuery),!function(e){\"use strict\";function r(){e(\".dropdown-backdrop\").remove(),e(t).each(function(){i(e(this)).removeClass(\"open\")})}function i(t){var n=t.attr(\"data-target\"),r;n||(n=t.attr(\"href\"),n=n&&/#/.test(n)&&n.replace(/.*(?=#[^\\s]*$)/,\"\")),r=n&&e(n);if(!r||!r.length)r=t.parent();return r}var t=\"[data-toggle=dropdown]\",n=function(t){var n=e(t).on(\"click.dropdown.data-api\",this.toggle);e(\"html\").on(\"click.dropdown.data-api\",function(){n.parent().removeClass(\"open\")})};n.prototype={constructor:n,toggle:function(t){var n=e(this),s,o;if(n.is(\".disabled, :disabled\"))return;return s=i(n),o=s.hasClass(\"open\"),r(),o||(\"ontouchstart\"in document.documentElement&&e('<div class=\"dropdown-backdrop\"/>').insertBefore(e(this)).on(\"click\",r),s.toggleClass(\"open\")),n.focus(),!1},keydown:function(n){var r,s,o,u,a,f;if(!/(38|40|27)/.test(n.keyCode))return;r=e(this),n.preventDefault(),n.stopPropagation();if(r.is(\".disabled, :disabled\"))return;u=i(r),a=u.hasClass(\"open\");if(!a||a&&n.keyCode==27)return n.which==27&&u.find(t).focus(),r.click();s=e(\"[role=menu] li:not(.divider):visible a\",u);if(!s.length)return;f=s.index(s.filter(\":focus\")),n.keyCode==38&&f>0&&f--,n.keyCode==40&&f<s.length-1&&f++,~f||(f=0),s.eq(f).focus()}};var s=e.fn.dropdown;e.fn.dropdown=function(t){return this.each(function(){var r=e(this),i=r.data(\"dropdown\");i||r.data(\"dropdown\",i=new n(this)),typeof t==\"string\"&&i[t].call(r)})},e.fn.dropdown.Constructor=n,e.fn.dropdown.noConflict=function(){return e.fn.dropdown=s,this},e(document).on(\"click.dropdown.data-api\",r).on(\"click.dropdown.data-api\",\".dropdown form\",function(e){e.stopPropagation()}).on(\"click.dropdown.data-api\",t,n.prototype.toggle).on(\"keydown.dropdown.data-api\",t+\", [role=menu]\",n.prototype.keydown)}(window.jQuery),!function(e){\"use strict\";var t=function(t,n){this.options=n,this.$element=e(t).delegate('[data-dismiss=\"modal\"]',\"click.dismiss.modal\",e.proxy(this.hide,this)),this.options.remote&&this.$element.find(\".modal-body\").load(this.options.remote)};t.prototype={constructor:t,toggle:function(){return this[this.isShown?\"hide\":\"show\"]()},show:function(){var t=this,n=e.Event(\"show\");this.$element.trigger(n);if(this.isShown||n.isDefaultPrevented())return;this.isShown=!0,this.escape(),this.backdrop(function(){var n=e.support.transition&&t.$element.hasClass(\"fade\");t.$element.parent().length||t.$element.appendTo(document.body),t.$element.show(),n&&t.$element[0].offsetWidth,t.$element.addClass(\"in\").attr(\"aria-hidden\",!1),t.enforceFocus(),n?t.$element.one(e.support.transition.end,function(){t.$element.focus().trigger(\"shown\")}):t.$element.focus().trigger(\"shown\")})},hide:function(t){t&&t.preventDefault();var n=this;t=e.Event(\"hide\"),this.$element.trigger(t);if(!this.isShown||t.isDefaultPrevented())return;this.isShown=!1,this.escape(),e(document).off(\"focusin.modal\"),this.$element.removeClass(\"in\").attr(\"aria-hidden\",!0),e.support.transition&&this.$element.hasClass(\"fade\")?this.hideWithTransition():this.hideModal()},enforceFocus:function(){var t=this;e(document).on(\"focusin.modal\",function(e){t.$element[0]!==e.target&&!t.$element.has(e.target).length&&t.$element.focus()})},escape:function(){var e=this;this.isShown&&this.options.keyboard?this.$element.on(\"keyup.dismiss.modal\",function(t){t.which==27&&e.hide()}):this.isShown||this.$element.off(\"keyup.dismiss.modal\")},hideWithTransition:function(){var t=this,n=setTimeout(function(){t.$element.off(e.support.transition.end),t.hideModal()},500);this.$element.one(e.support.transition.end,function(){clearTimeout(n),t.hideModal()})},hideModal:function(){var e=this;this.$element.hide(),this.backdrop(function(){e.removeBackdrop(),e.$element.trigger(\"hidden\")})},removeBackdrop:function(){this.$backdrop&&this.$backdrop.remove(),this.$backdrop=null},backdrop:function(t){var n=this,r=this.$element.hasClass(\"fade\")?\"fade\":\"\";if(this.isShown&&this.options.backdrop){var i=e.support.transition&&r;this.$backdrop=e('<div class=\"modal-backdrop '+r+'\" />').appendTo(document.body),this.$backdrop.click(this.options.backdrop==\"static\"?e.proxy(this.$element[0].focus,this.$element[0]):e.proxy(this.hide,this)),i&&this.$backdrop[0].offsetWidth,this.$backdrop.addClass(\"in\");if(!t)return;i?this.$backdrop.one(e.support.transition.end,t):t()}else!this.isShown&&this.$backdrop?(this.$backdrop.removeClass(\"in\"),e.support.transition&&this.$element.hasClass(\"fade\")?this.$backdrop.one(e.support.transition.end,t):t()):t&&t()}};var n=e.fn.modal;e.fn.modal=function(n){return this.each(function(){var r=e(this),i=r.data(\"modal\"),s=e.extend({},e.fn.modal.defaults,r.data(),typeof n==\"object\"&&n);i||r.data(\"modal\",i=new t(this,s)),typeof n==\"string\"?i[n]():s.show&&i.show()})},e.fn.modal.defaults={backdrop:!0,keyboard:!0,show:!0},e.fn.modal.Constructor=t,e.fn.modal.noConflict=function(){return e.fn.modal=n,this},e(document).on(\"click.modal.data-api\",'[data-toggle=\"modal\"]',function(t){var n=e(this),r=n.attr(\"href\"),i=e(n.attr(\"data-target\")||r&&r.replace(/.*(?=#[^\\s]+$)/,\"\")),s=i.data(\"modal\")?\"toggle\":e.extend({remote:!/#/.test(r)&&r},i.data(),n.data());t.preventDefault(),i.modal(s).one(\"hide\",function(){n.focus()})})}(window.jQuery),!function(e){\"use strict\";var t=function(e,t){this.init(\"tooltip\",e,t)};t.prototype={constructor:t,init:function(t,n,r){var i,s,o,u,a;this.type=t,this.$element=e(n),this.options=this.getOptions(r),this.enabled=!0,o=this.options.trigger.split(\" \");for(a=o.length;a--;)u=o[a],u==\"click\"?this.$element.on(\"click.\"+this.type,this.options.selector,e.proxy(this.toggle,this)):u!=\"manual\"&&(i=u==\"hover\"?\"mouseenter\":\"focus\",s=u==\"hover\"?\"mouseleave\":\"blur\",this.$element.on(i+\".\"+this.type,this.options.selector,e.proxy(this.enter,this)),this.$element.on(s+\".\"+this.type,this.options.selector,e.proxy(this.leave,this)));this.options.selector?this._options=e.extend({},this.options,{trigger:\"manual\",selector:\"\"}):this.fixTitle()},getOptions:function(t){return t=e.extend({},e.fn[this.type].defaults,this.$element.data(),t),t.delay&&typeof t.delay==\"number\"&&(t.delay={show:t.delay,hide:t.delay}),t},enter:function(t){var n=e.fn[this.type].defaults,r={},i;this._options&&e.each(this._options,function(e,t){n[e]!=t&&(r[e]=t)},this),i=e(t.currentTarget)[this.type](r).data(this.type);if(!i.options.delay||!i.options.delay.show)return i.show();clearTimeout(this.timeout),i.hoverState=\"in\",this.timeout=setTimeout(function(){i.hoverState==\"in\"&&i.show()},i.options.delay.show)},leave:function(t){var n=e(t.currentTarget)[this.type](this._options).data(this.type);this.timeout&&clearTimeout(this.timeout);if(!n.options.delay||!n.options.delay.hide)return n.hide();n.hoverState=\"out\",this.timeout=setTimeout(function(){n.hoverState==\"out\"&&n.hide()},n.options.delay.hide)},show:function(){var t,n,r,i,s,o,u=e.Event(\"show\");if(this.hasContent()&&this.enabled){this.$element.trigger(u);if(u.isDefaultPrevented())return;t=this.tip(),this.setContent(),this.options.animation&&t.addClass(\"fade\"),s=typeof this.options.placement==\"function\"?this.options.placement.call(this,t[0],this.$element[0]):this.options.placement,t.detach().css({top:0,left:0,display:\"block\"}),this.options.container?t.appendTo(this.options.container):t.insertAfter(this.$element),n=this.getPosition(),r=t[0].offsetWidth,i=t[0].offsetHeight;switch(s){case\"bottom\":o={top:n.top+n.height,left:n.left+n.width/2-r/2};break;case\"top\":o={top:n.top-i,left:n.left+n.width/2-r/2};break;case\"left\":o={top:n.top+n.height/2-i/2,left:n.left-r};break;case\"right\":o={top:n.top+n.height/2-i/2,left:n.left+n.width}}this.applyPlacement(o,s),this.$element.trigger(\"shown\")}},applyPlacement:function(e,t){var n=this.tip(),r=n[0].offsetWidth,i=n[0].offsetHeight,s,o,u,a;n.offset(e).addClass(t).addClass(\"in\"),s=n[0].offsetWidth,o=n[0].offsetHeight,t==\"top\"&&o!=i&&(e.top=e.top+i-o,a=!0),t==\"bottom\"||t==\"top\"?(u=0,e.left<0&&(u=e.left*-2,e.left=0,n.offset(e),s=n[0].offsetWidth,o=n[0].offsetHeight),this.replaceArrow(u-r+s,s,\"left\")):this.replaceArrow(o-i,o,\"top\"),a&&n.offset(e)},replaceArrow:function(e,t,n){this.arrow().css(n,e?50*(1-e/t)+\"%\":\"\")},setContent:function(){var e=this.tip(),t=this.getTitle();e.find(\".tooltip-inner\")[this.options.html?\"html\":\"text\"](t),e.removeClass(\"fade in top bottom left right\")},hide:function(){function i(){var t=setTimeout(function(){n.off(e.support.transition.end).detach()},500);n.one(e.support.transition.end,function(){clearTimeout(t),n.detach()})}var t=this,n=this.tip(),r=e.Event(\"hide\");this.$element.trigger(r);if(r.isDefaultPrevented())return;return n.removeClass(\"in\"),e.support.transition&&this.$tip.hasClass(\"fade\")?i():n.detach(),this.$element.trigger(\"hidden\"),this},fixTitle:function(){var e=this.$element;(e.attr(\"title\")||typeof e.attr(\"data-original-title\")!=\"string\")&&e.attr(\"data-original-title\",e.attr(\"title\")||\"\").attr(\"title\",\"\")},hasContent:function(){return this.getTitle()},getPosition:function(){var t=this.$element[0];return e.extend({},typeof t.getBoundingClientRect==\"function\"?t.getBoundingClientRect():{width:t.offsetWidth,height:t.offsetHeight},this.$element.offset())},getTitle:function(){var e,t=this.$element,n=this.options;return e=t.attr(\"data-original-title\")||(typeof n.title==\"function\"?n.title.call(t[0]):n.title),e},tip:function(){return this.$tip=this.$tip||e(this.options.template)},arrow:function(){return this.$arrow=this.$arrow||this.tip().find(\".tooltip-arrow\")},validate:function(){this.$element[0].parentNode||(this.hide(),this.$element=null,this.options=null)},enable:function(){this.enabled=!0},disable:function(){this.enabled=!1},toggleEnabled:function(){this.enabled=!this.enabled},toggle:function(t){var n=t?e(t.currentTarget)[this.type](this._options).data(this.type):this;n.tip().hasClass(\"in\")?n.hide():n.show()},destroy:function(){this.hide().$element.off(\".\"+this.type).removeData(this.type)}};var n=e.fn.tooltip;e.fn.tooltip=function(n){return this.each(function(){var r=e(this),i=r.data(\"tooltip\"),s=typeof n==\"object\"&&n;i||r.data(\"tooltip\",i=new t(this,s)),typeof n==\"string\"&&i[n]()})},e.fn.tooltip.Constructor=t,e.fn.tooltip.defaults={animation:!0,placement:\"top\",selector:!1,template:'<div class=\"tooltip\"><div class=\"tooltip-arrow\"></div><div class=\"tooltip-inner\"></div></div>',trigger:\"hover focus\",title:\"\",delay:0,html:!1,container:!1},e.fn.tooltip.noConflict=function(){return e.fn.tooltip=n,this}}(window.jQuery),!function(e){\"use strict\";var t=function(e,t){this.init(\"popover\",e,t)};t.prototype=e.extend({},e.fn.tooltip.Constructor.prototype,{constructor:t,setContent:function(){var e=this.tip(),t=this.getTitle(),n=this.getContent();e.find(\".popover-title\")[this.options.html?\"html\":\"text\"](t),e.find(\".popover-content\")[this.options.html?\"html\":\"text\"](n),e.removeClass(\"fade top bottom left right in\")},hasContent:function(){return this.getTitle()||this.getContent()},getContent:function(){var e,t=this.$element,n=this.options;return e=(typeof n.content==\"function\"?n.content.call(t[0]):n.content)||t.attr(\"data-content\"),e},tip:function(){return this.$tip||(this.$tip=e(this.options.template)),this.$tip},destroy:function(){this.hide().$element.off(\".\"+this.type).removeData(this.type)}});var n=e.fn.popover;e.fn.popover=function(n){return this.each(function(){var r=e(this),i=r.data(\"popover\"),s=typeof n==\"object\"&&n;i||r.data(\"popover\",i=new t(this,s)),typeof n==\"string\"&&i[n]()})},e.fn.popover.Constructor=t,e.fn.popover.defaults=e.extend({},e.fn.tooltip.defaults,{placement:\"right\",trigger:\"click\",content:\"\",template:'<div class=\"popover\"><div class=\"arrow\"></div><h3 class=\"popover-title\"></h3><div class=\"popover-content\"></div></div>'}),e.fn.popover.noConflict=function(){return e.fn.popover=n,this}}(window.jQuery),!function(e){\"use strict\";function t(t,n){var r=e.proxy(this.process,this),i=e(t).is(\"body\")?e(window):e(t),s;this.options=e.extend({},e.fn.scrollspy.defaults,n),this.$scrollElement=i.on(\"scroll.scroll-spy.data-api\",r),this.selector=(this.options.target||(s=e(t).attr(\"href\"))&&s.replace(/.*(?=#[^\\s]+$)/,\"\")||\"\")+\" .nav li > a\",this.$body=e(\"body\"),this.refresh(),this.process()}t.prototype={constructor:t,refresh:function(){var t=this,n;this.offsets=e([]),this.targets=e([]),n=this.$body.find(this.selector).map(function(){var n=e(this),r=n.data(\"target\")||n.attr(\"href\"),i=/^#\\w/.test(r)&&e(r);return i&&i.length&&[[i.position().top+(!e.isWindow(t.$scrollElement.get(0))&&t.$scrollElement.scrollTop()),r]]||null}).sort(function(e,t){return e[0]-t[0]}).each(function(){t.offsets.push(this[0]),t.targets.push(this[1])})},process:function(){var e=this.$scrollElement.scrollTop()+this.options.offset,t=this.$scrollElement[0].scrollHeight||this.$body[0].scrollHeight,n=t-this.$scrollElement.height(),r=this.offsets,i=this.targets,s=this.activeTarget,o;if(e>=n)return s!=(o=i.last()[0])&&this.activate(o);for(o=r.length;o--;)s!=i[o]&&e>=r[o]&&(!r[o+1]||e<=r[o+1])&&this.activate(i[o])},activate:function(t){var n,r;this.activeTarget=t,e(this.selector).parent(\".active\").removeClass(\"active\"),r=this.selector+'[data-target=\"'+t+'\"],'+this.selector+'[href=\"'+t+'\"]',n=e(r).parent(\"li\").addClass(\"active\"),n.parent(\".dropdown-menu\").length&&(n=n.closest(\"li.dropdown\").addClass(\"active\")),n.trigger(\"activate\")}};var n=e.fn.scrollspy;e.fn.scrollspy=function(n){return this.each(function(){var r=e(this),i=r.data(\"scrollspy\"),s=typeof n==\"object\"&&n;i||r.data(\"scrollspy\",i=new t(this,s)),typeof n==\"string\"&&i[n]()})},e.fn.scrollspy.Constructor=t,e.fn.scrollspy.defaults={offset:10},e.fn.scrollspy.noConflict=function(){return e.fn.scrollspy=n,this},e(window).on(\"load\",function(){e('[data-spy=\"scroll\"]').each(function(){var t=e(this);t.scrollspy(t.data())})})}(window.jQuery),!function(e){\"use strict\";var t=function(t){this.element=e(t)};t.prototype={constructor:t,show:function(){var t=this.element,n=t.closest(\"ul:not(.dropdown-menu)\"),r=t.attr(\"data-target\"),i,s,o;r||(r=t.attr(\"href\"),r=r&&r.replace(/.*(?=#[^\\s]*$)/,\"\"));if(t.parent(\"li\").hasClass(\"active\"))return;i=n.find(\".active:last a\")[0],o=e.Event(\"show\",{relatedTarget:i}),t.trigger(o);if(o.isDefaultPrevented())return;s=e(r),this.activate(t.parent(\"li\"),n),this.activate(s,s.parent(),function(){t.trigger({type:\"shown\",relatedTarget:i})})},activate:function(t,n,r){function o(){i.removeClass(\"active\").find(\"> .dropdown-menu > .active\").removeClass(\"active\"),t.addClass(\"active\"),s?(t[0].offsetWidth,t.addClass(\"in\")):t.removeClass(\"fade\"),t.parent(\".dropdown-menu\")&&t.closest(\"li.dropdown\").addClass(\"active\"),r&&r()}var i=n.find(\"> .active\"),s=r&&e.support.transition&&i.hasClass(\"fade\");s?i.one(e.support.transition.end,o):o(),i.removeClass(\"in\")}};var n=e.fn.tab;e.fn.tab=function(n){return this.each(function(){var r=e(this),i=r.data(\"tab\");i||r.data(\"tab\",i=new t(this)),typeof n==\"string\"&&i[n]()})},e.fn.tab.Constructor=t,e.fn.tab.noConflict=function(){return e.fn.tab=n,this},e(document).on(\"click.tab.data-api\",'[data-toggle=\"tab\"], [data-toggle=\"pill\"]',function(t){t.preventDefault(),e(this).tab(\"show\")})}(window.jQuery),!function(e){\"use strict\";var t=function(t,n){this.$element=e(t),this.options=e.extend({},e.fn.typeahead.defaults,n),this.matcher=this.options.matcher||this.matcher,this.sorter=this.options.sorter||this.sorter,this.highlighter=this.options.highlighter||this.highlighter,this.updater=this.options.updater||this.updater,this.source=this.options.source,this.$menu=e(this.options.menu),this.shown=!1,this.listen()};t.prototype={constructor:t,select:function(){var e=this.$menu.find(\".active\").attr(\"data-value\");return this.$element.val(this.updater(e)).change(),this.hide()},updater:function(e){return e},show:function(){var t=e.extend({},this.$element.position(),{height:this.$element[0].offsetHeight});return this.$menu.insertAfter(this.$element).css({top:t.top+t.height,left:t.left}).show(),this.shown=!0,this},hide:function(){return this.$menu.hide(),this.shown=!1,this},lookup:function(t){var n;return this.query=this.$element.val(),!this.query||this.query.length<this.options.minLength?this.shown?this.hide():this:(n=e.isFunction(this.source)?this.source(this.query,e.proxy(this.process,this)):this.source,n?this.process(n):this)},process:function(t){var n=this;return t=e.grep(t,function(e){return n.matcher(e)}),t=this.sorter(t),t.length?this.render(t.slice(0,this.options.items)).show():this.shown?this.hide():this},matcher:function(e){return~e.toLowerCase().indexOf(this.query.toLowerCase())},sorter:function(e){var t=[],n=[],r=[],i;while(i=e.shift())i.toLowerCase().indexOf(this.query.toLowerCase())?~i.indexOf(this.query)?n.push(i):r.push(i):t.push(i);return t.concat(n,r)},highlighter:function(e){var t=this.query.replace(/[\\-\\[\\]{}()*+?.,\\\\\\^$|#\\s]/g,\"\\\\$&\");return e.replace(new RegExp(\"(\"+t+\")\",\"ig\"),function(e,t){return\"<strong>\"+t+\"</strong>\"})},render:function(t){var n=this;return t=e(t).map(function(t,r){return t=e(n.options.item).attr(\"data-value\",r),t.find(\"a\").html(n.highlighter(r)),t[0]}),t.first().addClass(\"active\"),this.$menu.html(t),this},next:function(t){var n=this.$menu.find(\".active\").removeClass(\"active\"),r=n.next();r.length||(r=e(this.$menu.find(\"li\")[0])),r.addClass(\"active\")},prev:function(e){var t=this.$menu.find(\".active\").removeClass(\"active\"),n=t.prev();n.length||(n=this.$menu.find(\"li\").last()),n.addClass(\"active\")},listen:function(){this.$element.on(\"focus\",e.proxy(this.focus,this)).on(\"blur\",e.proxy(this.blur,this)).on(\"keypress\",e.proxy(this.keypress,this)).on(\"keyup\",e.proxy(this.keyup,this)),this.eventSupported(\"keydown\")&&this.$element.on(\"keydown\",e.proxy(this.keydown,this)),this.$menu.on(\"click\",e.proxy(this.click,this)).on(\"mouseenter\",\"li\",e.proxy(this.mouseenter,this)).on(\"mouseleave\",\"li\",e.proxy(this.mouseleave,this))},eventSupported:function(e){var t=e in this.$element;return t||(this.$element.setAttribute(e,\"return;\"),t=typeof this.$element[e]==\"function\"),t},move:function(e){if(!this.shown)return;switch(e.keyCode){case 9:case 13:case 27:e.preventDefault();break;case 38:e.preventDefault(),this.prev();break;case 40:e.preventDefault(),this.next()}e.stopPropagation()},keydown:function(t){this.suppressKeyPressRepeat=~e.inArray(t.keyCode,[40,38,9,13,27]),this.move(t)},keypress:function(e){if(this.suppressKeyPressRepeat)return;this.move(e)},keyup:function(e){switch(e.keyCode){case 40:case 38:case 16:case 17:case 18:break;case 9:case 13:if(!this.shown)return;this.select();break;case 27:if(!this.shown)return;this.hide();break;default:this.lookup()}e.stopPropagation(),e.preventDefault()},focus:function(e){this.focused=!0},blur:function(e){this.focused=!1,!this.mousedover&&this.shown&&this.hide()},click:function(e){e.stopPropagation(),e.preventDefault(),this.select(),this.$element.focus()},mouseenter:function(t){this.mousedover=!0,this.$menu.find(\".active\").removeClass(\"active\"),e(t.currentTarget).addClass(\"active\")},mouseleave:function(e){this.mousedover=!1,!this.focused&&this.shown&&this.hide()}};var n=e.fn.typeahead;e.fn.typeahead=function(n){return this.each(function(){var r=e(this),i=r.data(\"typeahead\"),s=typeof n==\"object\"&&n;i||r.data(\"typeahead\",i=new t(this,s)),typeof n==\"string\"&&i[n]()})},e.fn.typeahead.defaults={source:[],items:8,menu:'<ul class=\"typeahead dropdown-menu\"></ul>',item:'<li><a href=\"#\"></a></li>',minLength:1},e.fn.typeahead.Constructor=t,e.fn.typeahead.noConflict=function(){return e.fn.typeahead=n,this},e(document).on(\"focus.typeahead.data-api\",'[data-provide=\"typeahead\"]',function(t){var n=e(this);if(n.data(\"typeahead\"))return;n.typeahead(n.data())})}(window.jQuery),!function(e){\"use strict\";var t=function(t,n){this.options=e.extend({},e.fn.affix.defaults,n),this.$window=e(window).on(\"scroll.affix.data-api\",e.proxy(this.checkPosition,this)).on(\"click.affix.data-api\",e.proxy(function(){setTimeout(e.proxy(this.checkPosition,this),1)},this)),this.$element=e(t),this.checkPosition()};t.prototype.checkPosition=function(){if(!this.$element.is(\":visible\"))return;var t=e(document).height(),n=this.$window.scrollTop(),r=this.$element.offset(),i=this.options.offset,s=i.bottom,o=i.top,u=\"affix affix-top affix-bottom\",a;typeof i!=\"object\"&&(s=o=i),typeof o==\"function\"&&(o=i.top()),typeof s==\"function\"&&(s=i.bottom()),a=this.unpin!=null&&n+this.unpin<=r.top?!1:s!=null&&r.top+this.$element.height()>=t-s?\"bottom\":o!=null&&n<=o?\"top\":!1;if(this.affixed===a)return;this.affixed=a,this.unpin=a==\"bottom\"?r.top-n:null,this.$element.removeClass(u).addClass(\"affix\"+(a?\"-\"+a:\"\"))};var n=e.fn.affix;e.fn.affix=function(n){return this.each(function(){var r=e(this),i=r.data(\"affix\"),s=typeof n==\"object\"&&n;i||r.data(\"affix\",i=new t(this,s)),typeof n==\"string\"&&i[n]()})},e.fn.affix.Constructor=t,e.fn.affix.defaults={offset:0},e.fn.affix.noConflict=function(){return e.fn.affix=n,this},e(window).on(\"load\",function(){e('[data-spy=\"affix\"]').each(function(){var t=e(this),n=t.data();n.offset=n.offset||{},n.offsetBottom&&(n.offset.bottom=n.offsetBottom),n.offsetTop&&(n.offset.top=n.offsetTop),t.affix(n)})})}(window.jQuery);\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\node_modules\\grunt-contrib-jshint\\node_modules\\jshint\\dist\\jshint-rhino.js:\n  974   * The Function.prototype.inherits from lang.js rewritten as a standalone\n  975   * function (not on Function.prototype). NOTE: If this file is to be loaded\n  976:  * during bootstrapping this function needs to be rewritten using some native\n  977   * functions as prototype setup using normal JavaScript does not work as\n  978:  * expected during bootstrapping (see mirror.js in r114903).\n  979   *\n  980   * @param {function} ctor Constructor function which needs to inherit the\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\node_modules\\grunt-contrib-jshint\\node_modules\\jshint\\dist\\jshint.js:\n  972   * The Function.prototype.inherits from lang.js rewritten as a standalone\n  973   * function (not on Function.prototype). NOTE: If this file is to be loaded\n  974:  * during bootstrapping this function needs to be rewritten using some native\n  975   * functions as prototype setup using normal JavaScript does not work as\n  976:  * expected during bootstrapping (see mirror.js in r114903).\n  977   *\n  978   * @param {function} ctor Constructor function which needs to inherit the\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\node_modules\\grunt-contrib-jshint\\node_modules\\jshint\\node_modules\\htmlparser2\\node_modules\\readable-stream\\node_modules\\core-util-is\\float.patch:\n  477  - * The Function.prototype.inherits from lang.js rewritten as a standalone\n  478  - * function (not on Function.prototype). NOTE: If this file is to be loaded\n  479: - * during bootstrapping this function needs to be rewritten using some native\n  480  - * functions as prototype setup using normal JavaScript does not work as\n  481: - * expected during bootstrapping (see mirror.js in r114903).\n  482  - *\n  483  - * @param {function} ctor Constructor function which needs to inherit the\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\node_modules\\q\\q.js:\n   37  \n   38      // Montage Require\n   39:     if (typeof bootstrap === \"function\") {\n   40:         bootstrap(\"promise\", definition);\n   41  \n   42      // CommonJS\n\n50 matches across 14 files\n\n\nSearching 968 files for \"sorttasks\" (regex)\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\js\\app\\TodoApp.js:\n  190          var $taskList = $(\"#tasks\");\n  191          $taskList.empty();\n  192:         var sortedTasks = self.taskList.sortTasks();\n  193          sortedTasks.forEach(function(task) {\n  194              var $taskItem = $(\"#ui-templates .task-item\").clone();\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\js\\data\\TaskList.js:\n   35      };\n   36  \n   37:     TaskList.prototype.sortTasks = function() {\n   38          var result = [];\n   39          this.tasks.forEach(function(task) {\n\n2 matches across 2 files\n\n\nSearching 968 files for \"getTodoFile\" (regex)\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\js\\app\\TodoApp.js:\n   48              self.loadTodoFile();\n   49  \n   50:             // self.getTodoFile().then(function() {\n   51              //     self.loadTodoFile();\n   52              // });\n   ..\n  104      };\n  105  \n  106:     TodoApp.prototype.getTodoFile = function(subDir) {\n  107          var self = this;\n  108          var resultQ = $.Deferred();\n  109:         var getTodoFileQ = $.Deferred();\n  110  \n  111          chrome.storage.local.get(\"todoFileID\", function(result) {\n  ...\n  122                                  };\n  123                                  chrome.storage.local.set(settings, function() {\n  124:                                     getTodoFileQ.resolve(entry);\n  125                                  });\n  126                              });\n  127                          });\n  128                      } else\n  129:                         getTodoFileQ.reject(\"todo.txt file not defined\");\n  130                  });\n  131                  alert.show();\n  132              } else {\n  133                  chrome.fileSystem.restoreEntry(result.todoFileID, function(entry) {\n  134:                     getTodoFileQ.resolve(entry);\n  135                  });\n  136              }\n  137          });\n  138          \n  139:         getTodoFileQ.done(function(fileEntry) {\n  140              self.todoFile = fileEntry;\n  141              resultQ.resolve();\n\n7 matches in 1 file\n\n\nSearching 972 files for \"fldcompleteddate\" (regex)\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\js\\ui\\dlgs\\EditTaskDlg.js:\n   51          if (self.isComplete)\n   52              $(\"#dlgEditTask .btn-complete img\").attr(\"src\", \"img/completed.png\");\n   53:         $(\"#fldCompletedDate\").val(self.completedDate);\n   54      }\n   55  \n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\ui\\dlgs\\editTask.html:\n   52                      <span style=\"margin-left: 5px\">Completed date:</span>\n   53                      <div class=\"btn-group\">\n   54:                         <input id=\"fldCompletedDate\" type=\"text\" class=\"dateInput\"/>\n   55                          <button class=\"btn dropdown-toggle\" data-toggle=\"dropdown\">\n   56                              <span class=\"caret\"></span>\n\n2 matches across 2 files\n\n\nSearching 972 files for \".task-item\" (regex)\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\appMain.html:\n   34  \n   35  <div id=\"ui-templates\" style=\"display:none\">\n   36:     <div class=\"task-item\">\n   37          <div class=\"task-tags\">\n   38              <img class=\"tag-checkbox\" src=\"\">\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\css\\app.css:\n   10  }\n   11  \n   12: .task-item {\n   13      display: table-row;\n   14  }\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\js\\app\\TodoApp.js:\n  145          var sortedTasks = self.taskList.sortTasks();\n  146          sortedTasks.forEach(function(task) {\n  147:             var $taskItem = $(\"#ui-templates .task-item\").clone();\n  148              setTaskItemCompletedState($taskItem, task);\n  149              var $star = $taskItem.find(\".tag-star\");\n  ...\n  167          });\n  168          $taskList.find(\".tag-checkbox\").click(function(e) {\n  169:             self.toggleComplete($(e.target).parents(\".task-item\"));\n  170          });\n  171          $taskList.find(\".task-contents\").click(function(e) {\n  172:             self.editTask($(e.target).parents(\".task-item\"));\n  173          });\n  174      };\n\n5 matches across 3 files\n\n\nSearching 972 files for \"dlgEditTask\" (regex)\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\js\\ui\\dlgs\\EditTaskDlg.js:\n   15          } else {\n   16              this.task = new Task();\n   17:             $(\"#dlgEditTask h2\").text(\"New Task\");\n   18          }\n   19          var self = this;\n   ..\n   50          $(\"#fldTitle\").val(task.getTitle());\n   51          if (self.isComplete)\n   52:             $(\"#dlgEditTask .btn-complete img\").attr(\"src\", \"img/completed.png\");\n   53          $(\"#fldCompletedDate\").val(self.completedDate);\n   54      }\n   ..\n   63      EditTaskDlg.ADD_MODE = \"Mode-Add\";\n   64  \n   65:     EditTaskDlg.prototype.cancelBtn = function() { return $($(\"#dlgEditTask .modal-footer a\")[0]); };\n   66:     EditTaskDlg.prototype.saveBtn = function() { return $($(\"#dlgEditTask .modal-footer a\")[1]); };\n   67  \n   68      EditTaskDlg.prototype.hide = function() {\n   69:         $(\"#dlgEditTask\").modal(\"hide\");\n   70      };\n   71  \n   72      EditTaskDlg.prototype.show = function() {\n   73:         $(\"#dlgEditTask\").modal(\"show\");\n   74          $(\"#fldAcctName\").focus();\n   75      };\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\ui\\dlgs\\editTask.html:\n   34  </style>\n   35  \n   36: <div id=\"dlgEditTask\" class=\"modal fade\">\n   37      <div class=\"modal-dialog\">\n   38          <div class=\"modal-content\">\n\n7 matches across 2 files\n\n\nSearching 972 files for \"EditTaskDlg\" (regex)\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\js\\app\\TodoApp.js:\n   10  define(\n   11      [\"xlib/EventTarget\", \"lib/util\",\n   12:      \"ui/dlgs/AlertDlg\", \"ui/dlgs/EditTaskDlg\",\n   13       \"data/Task\", \"data/TaskList\",\n   14       \"app/AppPrefs\"],\n   15      function(EventTarget, util, \n   16:              AlertDlg, EditTaskDlg,\n   17               Task, TaskList,\n   18               AppPrefs)\n   ..\n   54          $(\"#main-dlg-hook\").load(\"ui/dlgs/editTask.html\", function() {\n   55              var task = self.taskList.getTaskFromIndex(Number($taskItem.attr(\"data-index\")));\n   56:             self.editTaskDlg = new EditTaskDlg(task);\n   57:             self.editTaskDlg.addListener(EditTaskDlg.SAVE_TASK, function() {\n   58:                 self.editTaskDlg.hide();\n   59                  self.saveTasks();\n   60                  self.reloadTasks();\n   61              });\n   62:             self.editTaskDlg.show();\n   63          });\n   64      };\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\js\\ui\\dlgs\\EditTaskDlg.js:\n    6  {\n    7  \n    8:     function EditTaskDlg(task) {\n    9          EventTarget.call(this);\n   10:         this.mode = (task) ? EditTaskDlg.EDIT_MODE : EditTaskDlg.ADD_MODE;\n   11          if (task) {\n   12              this.task = task;\n   ..\n   54      }\n   55  \n   56:     EditTaskDlg.prototype = new EventTarget();\n   57:     EditTaskDlg.prototype.constructor = EditTaskDlg;\n   58  \n   59      // events fired by this object\n   60:     EditTaskDlg.SAVE_TASK = \"SaveTask\";\n   61  \n   62:     EditTaskDlg.EDIT_MODE = \"Mode-Edit\";\n   63:     EditTaskDlg.ADD_MODE = \"Mode-Add\";\n   64  \n   65:     EditTaskDlg.prototype.cancelBtn = function() { return $($(\"#dlgEditTask .modal-footer a\")[0]); };\n   66:     EditTaskDlg.prototype.saveBtn = function() { return $($(\"#dlgEditTask .modal-footer a\")[1]); };\n   67  \n   68:     EditTaskDlg.prototype.hide = function() {\n   69          $(\"#dlgEditTask\").modal(\"hide\");\n   70      };\n   71  \n   72:     EditTaskDlg.prototype.show = function() {\n   73          $(\"#dlgEditTask\").modal(\"show\");\n   74          $(\"#fldAcctName\").focus();\n   75      };\n   76  \n   77:     EditTaskDlg.prototype.saveData = function() {\n   78          var tokenizer = new TaskTokenizer();\n   79          var result = tokenizer.tokenize($(\"#fldTitle\").val(), function(token, tokenType) {\n   ..\n   85              var $imgStar = $(\".btn-star img\");\n   86              this.task.setStar($imgStar.attr(\"src\") == \"img/star.png\");\n   87:             this.fire(EditTaskDlg.SAVE_TASK);\n   88          }\n   89      };\n   90  \n   91:     EditTaskDlg.prototype.setPriority = function(prio) {\n   92          var $items = $(\".priority-menu li\");\n   93          this.priority = prio;\n   ..\n  102      };\n  103  \n  104:     EditTaskDlg.prototype.toggleStar = function() {\n  105          var $imgStar = $(\".btn-star img\");\n  106          if ($imgStar.attr(\"src\") == \"img/staroff.png\")\n  ...\n  110      };\n  111  \n  112:     EditTaskDlg.prototype.updateUI = function() {\n  113      };\n  114  \n  115:     return EditTaskDlg;\n  116  });\n  117  \n\n27 matches across 2 files\n\n\nSearching 972 files for \"editTask(\" (regex)\n\nUnmatched marking parenthesis ( or \\(.  The error occurred while parsing the regular expression: 'editTask(>>>HERE>>>'. in regular expression editTask(\n\n0 matches\n\nSearching 972 files for \"editTask(\"\n\nC:\\sdd\\dev\\proj\\todo-txt\\app\\js\\app\\TodoApp.js:\n  171          });\n  172          $taskList.find(\".task-contents\").click(function(e) {\n  173:             self.editTask($(e.target).parents(\".task-item\"));\n  174          });\n  175      };\n\n1 match in 1 file\n",
+			"settings":
+			{
+				"buffer_size": 48519,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "app/css/app.css",
+			"settings":
+			{
+				"buffer_size": 772,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
@@ -477,7 +518,24 @@
 			"file": "app/appMain.html",
 			"settings":
 			{
-				"buffer_size": 1321,
+				"buffer_size": 1481,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/js/app/appMain.js",
+			"settings":
+			{
+				"buffer_size": 647,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/js/ui/dlgs/EditTaskDlg.js",
+			"settings":
+			{
+				"buffer_size": 4197,
 				"line_ending": "Windows"
 			}
 		},
@@ -485,7 +543,8 @@
 			"file": "app/js/data/Task.js",
 			"settings":
 			{
-				"buffer_size": 4033,
+				"buffer_size": 6338,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
@@ -493,15 +552,45 @@
 			"file": "app/js/data/TaskTokenizer.js",
 			"settings":
 			{
-				"buffer_size": 4892,
+				"buffer_size": 5579,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/js/lib/Preferences.js",
+			"settings":
+			{
+				"buffer_size": 740,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/js/app/AppPrefs.js",
+			"settings":
+			{
+				"buffer_size": 214,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app/js/data/TaskList.js",
+			"settings":
+			{
+				"buffer_size": 1365,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		}
 	],
 	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
 	"command_palette":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
 		],
@@ -509,7 +598,10 @@
 	},
 	"console":
 	{
-		"height": 0.0
+		"height": 0.0,
+		"history":
+		[
+		]
 	},
 	"distraction_free":
 	{
@@ -520,8 +612,28 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
+	"expanded_folders":
+	[
+		"/C/sdd/dev/proj/todo-txt/app",
+		"/C/sdd/dev/proj/todo-txt/app/js",
+		"/C/sdd/dev/proj/todo-txt/app/js/app",
+		"/C/sdd/dev/proj/todo-txt/app/js/data",
+		"/C/sdd/dev/proj/todo-txt/app/js/ui",
+		"/C/sdd/dev/proj/todo-txt/app/js/ui/dlgs",
+		"/C/sdd/dev/proj/todo-txt/app/js/xlib"
+	],
 	"file_history":
 	[
+		"/C/sdd/dev/proj/todo-txt/app/js/xlib/tbs/css/bootstrap.css",
+		"/C/sdd/dev/proj/todo-txt/app/css/app.css",
+		"/C/sdd/dev/proj/todo-txt/app/appMain.html",
+		"/C/sdd/dev/proj/todo-txt/app/package.json",
+		"/C/Users/sdakin/Dropbox/todo/todo.txt",
+		"/C/dev/proj/agilePM/docs/140910-bugs.csv",
+		"/C/Users/sdakin/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/SU2P21UO/text_0.txt",
+		"/C/Users/sdakin/Dropbox/todo/todo (2).txt",
+		"/C/sdd/dev/proj/todo-txt/app/js/lib/Utils.js",
+		"/C/sdd/dev/proj/todo-txt/app/js/xlib/jq/jquery2.0.3.min.js",
 		"/C/Users/Steve/Downloads/test/Womens Health USA - Crave Worthy Haircuts + The Hot-Sex Bucket List January, (February 2014)/~Get Your Files Here/Important ! Readme.txt",
 		"/C/Users/Steve/Desktop/all.vcf",
 		"/C/Users/Steve/Dropbox/todo/todo.txt",
@@ -618,9 +730,11 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
+			"<open folders>",
+			"C:\\dev\\projects\\web\\todo-txt",
 			"C:\\dev\\projects\\web\\todo-txt\\app",
 			"C:\\dev\\projects\\web\\expenses\\app",
 			"C:\\dev\\projects\\web\\tps\\www",
@@ -632,6 +746,28 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"editTask(",
+			"EditTaskDlg",
+			"dlgEditTask",
+			".task-item",
+			"rawData",
+			"fldcompleteddate",
+			"getTodoFile",
+			"sorttasks",
+			"todo.txt",
+			"event",
+			"fldTitle",
+			"errorMessage",
+			"field_label",
+			"filterTasksByProject",
+			"reloadTasks",
+			"processToken",
+			"isCustomToken",
+			"isPriorityToken",
+			"getTodoFile",
+			"bootstrap",
+			"textchange",
+			"getTodoFile",
 			"invalidToken",
 			"END_TOKEN",
 			"bootstrap",
@@ -737,29 +873,7 @@
 			" </",
 			"uploadFile",
 			"processCommand",
-			"dateformat",
-			"AppData",
-			"getScoreCategories",
-			"categorylist",
-			"setScore",
-			"Pre-Algebra",
-			"student.classes",
-			"modules",
-			"status",
-			"renderStudent",
-			"AppData",
-			"SCORE_STUDENT",
-			"getWhereClauseInfo",
-			"WSAPI.login",
-			"onTeacherStudentScored",
-			"UPDATE_CLASS_UI",
-			"TeacherModule.TEACHER_STUDENT_SCORED",
-			"updateDate",
-			"current-date",
-			"getscores",
-			"setScore",
-			"debugger",
-			"current-date"
+			"dateformat"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -785,23 +899,52 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/ui/dlgs/editTask.html",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5981,
+						"buffer_size": 758,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								622,
-								633
+								758,
+								758
+							]
+						],
+						"settings":
+						{
+							"auto_name": "http://news.google.com/news/url?sr=1&sa=t&ct2=us%2",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/ui/dlgs/editTask.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5143,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1848,
+								1848
 							]
 						],
 						"settings":
@@ -811,16 +954,76 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 540.0,
+						"translation.y": 320.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 2,
+					"file": "app/js/app/TodoApp.js",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1734,
+						"buffer_size": 8276,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7192,
+								7192
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2300.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/prefs.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 74,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								45,
+								45
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 48519,
 						"regions":
 						{
 							"match":
@@ -829,76 +1032,500 @@
 								"regions":
 								[
 									[
-										179,
-										188
+										151,
+										161
 									],
 									[
-										317,
-										326
+										322,
+										332
 									],
 									[
-										518,
-										527
+										351,
+										361
 									],
 									[
-										696,
-										705
+										599,
+										609
 									],
 									[
-										721,
-										730
+										678,
+										688
 									],
 									[
-										870,
-										879
+										868,
+										878
 									],
 									[
-										913,
-										922
+										887,
+										897
 									],
 									[
-										1071,
+										1070,
 										1080
 									],
 									[
-										1140,
-										1149
+										1266,
+										1276
 									],
 									[
-										1270,
-										1279
+										1400,
+										1410
 									],
 									[
-										1422,
-										1431
+										1428,
+										1438
 									],
 									[
-										1468,
-										1477
+										1466,
+										1476
 									],
 									[
-										1488,
-										1497
+										1483,
+										1493
 									],
 									[
-										1511,
-										1520
+										1500,
+										1510
 									],
 									[
-										1529,
+										1528,
 										1538
 									],
 									[
-										1551,
-										1560
-									],
-									[
-										1573,
-										1582
-									],
-									[
 										1593,
-										1602
+										1603
+									],
+									[
+										1642,
+										1652
+									],
+									[
+										1758,
+										1768
+									],
+									[
+										1923,
+										1933
+									],
+									[
+										2039,
+										2049
+									],
+									[
+										2121,
+										2131
+									],
+									[
+										2300,
+										2310
+									],
+									[
+										2390,
+										2400
+									],
+									[
+										2752,
+										2761
+									],
+									[
+										2944,
+										2953
+									],
+									[
+										3122,
+										3131
+									],
+									[
+										3147,
+										3156
+									],
+									[
+										3292,
+										3301
+									],
+									[
+										3335,
+										3344
+									],
+									[
+										3511,
+										3520
+									],
+									[
+										3578,
+										3587
+									],
+									[
+										3699,
+										3708
+									],
+									[
+										3872,
+										3881
+									],
+									[
+										4030,
+										4039
+									],
+									[
+										4181,
+										4190
+									],
+									[
+										4377,
+										4386
+									],
+									[
+										4428,
+										4437
+									],
+									[
+										4687,
+										4696
+									],
+									[
+										4916,
+										4925
+									],
+									[
+										4962,
+										4971
+									],
+									[
+										5225,
+										5234
+									],
+									[
+										5272,
+										5281
+									],
+									[
+										5536,
+										5545
+									],
+									[
+										5585,
+										5594
+									],
+									[
+										5851,
+										5860
+									],
+									[
+										5900,
+										5909
+									],
+									[
+										6168,
+										6177
+									],
+									[
+										6217,
+										6226
+									],
+									[
+										6482,
+										6491
+									],
+									[
+										6528,
+										6537
+									],
+									[
+										6789,
+										6798
+									],
+									[
+										6837,
+										6846
+									],
+									[
+										7126,
+										7135
+									],
+									[
+										7174,
+										7183
+									],
+									[
+										7384,
+										7393
+									],
+									[
+										7584,
+										7593
+									],
+									[
+										7634,
+										7643
+									],
+									[
+										7899,
+										7908
+									],
+									[
+										7943,
+										7952
+									],
+									[
+										8203,
+										8212
+									],
+									[
+										8253,
+										8262
+									],
+									[
+										8520,
+										8529
+									],
+									[
+										8566,
+										8575
+									],
+									[
+										8799,
+										8808
+									],
+									[
+										9056,
+										9065
+									],
+									[
+										37740,
+										37749
+									],
+									[
+										37914,
+										37923
+									],
+									[
+										38328,
+										38337
+									],
+									[
+										38502,
+										38511
+									],
+									[
+										38996,
+										39005
+									],
+									[
+										39172,
+										39181
+									],
+									[
+										39418,
+										39427
+									],
+									[
+										39461,
+										39470
+									],
+									[
+										39774,
+										39783
+									],
+									[
+										40016,
+										40025
+									],
+									[
+										40322,
+										40333
+									],
+									[
+										40484,
+										40495
+									],
+									[
+										40611,
+										40622
+									],
+									[
+										40899,
+										40910
+									],
+									[
+										41110,
+										41121
+									],
+									[
+										41370,
+										41381
+									],
+									[
+										41497,
+										41508
+									],
+									[
+										41896,
+										41912
+									],
+									[
+										42188,
+										42204
+									],
+									[
+										42591,
+										42601
+									],
+									[
+										42763,
+										42773
+									],
+									[
+										43029,
+										43039
+									],
+									[
+										43326,
+										43336
+									],
+									[
+										43482,
+										43492
+									],
+									[
+										43751,
+										43762
+									],
+									[
+										43952,
+										43963
+									],
+									[
+										44225,
+										44236
+									],
+									[
+										44332,
+										44343
+									],
+									[
+										44450,
+										44461
+									],
+									[
+										44573,
+										44584
+									],
+									[
+										44751,
+										44762
+									],
+									[
+										45088,
+										45099
+									],
+									[
+										45243,
+										45254
+									],
+									[
+										45530,
+										45541
+									],
+									[
+										45548,
+										45559
+									],
+									[
+										45591,
+										45602
+									],
+									[
+										45615,
+										45626
+									],
+									[
+										45679,
+										45690
+									],
+									[
+										45830,
+										45841
+									],
+									[
+										45977,
+										45988
+									],
+									[
+										46072,
+										46083
+									],
+									[
+										46096,
+										46107
+									],
+									[
+										46220,
+										46231
+									],
+									[
+										46274,
+										46285
+									],
+									[
+										46310,
+										46321
+									],
+									[
+										46384,
+										46395
+									],
+									[
+										46439,
+										46450
+									],
+									[
+										46487,
+										46498
+									],
+									[
+										46541,
+										46552
+									],
+									[
+										46650,
+										46661
+									],
+									[
+										46765,
+										46776
+									],
+									[
+										46888,
+										46899
+									],
+									[
+										47053,
+										47064
+									],
+									[
+										47416,
+										47427
+									],
+									[
+										47490,
+										47501
+									],
+									[
+										47671,
+										47682
+									],
+									[
+										47870,
+										47881
+									],
+									[
+										47956,
+										47967
+									],
+									[
+										48422,
+										48431
 									]
 								],
 								"scope": ""
@@ -907,69 +1534,280 @@
 						"selection":
 						[
 							[
-								183,
-								183
+								48438,
+								48438
 							]
 						],
 						"settings":
 						{
 							"detect_indentation": false,
-							"output_tag": 1,
+							"line_numbers": false,
+							"output_tag": 10,
 							"result_base_dir": "",
-							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_file_regex": "^([^ \t].*):$",
 							"result_line_regex": "^ +([0-9]+):",
 							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 10770.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/css/app.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 772,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								272,
+								272
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/appMain.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1481,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1358,
+								1358
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 50.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/js/app/appMain.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 647,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								471,
+								471
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/js/ui/dlgs/EditTaskDlg.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4197,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2774,
+								2785
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 605.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "app/js/data/Task.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6338,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2860,
+								2867
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "app/js/data/TaskTokenizer.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5579,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1037,
+								1037
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 94.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "app/js/lib/Preferences.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 740,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								740,
+								740
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "app/js/app/TodoApp.js",
+					"buffer": 12,
+					"file": "app/js/app/AppPrefs.js",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6459,
+						"buffer_size": 214,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1682,
-								1682
+								9,
+								9
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 495.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "app/js/ui/dlgs/EditTaskDlg.js",
+					"buffer": 13,
+					"file": "app/js/data/TaskList.js",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3816,
+						"buffer_size": 1365,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2240,
-								2240
+								1126,
+								1126
 							]
 						],
 						"settings":
@@ -982,90 +1820,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/appMain.html",
-					"settings":
-					{
-						"buffer_size": 1321,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								393,
-								393
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/js/data/Task.js",
-					"settings":
-					{
-						"buffer_size": 4033,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								215,
-								241
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/js/data/TaskTokenizer.js",
-					"settings":
-					{
-						"buffer_size": 4892,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4340,
-								4340
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1080.0,
-						"zoom_level": 1.0
-					},
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -1102,6 +1857,12 @@
 		]
 	},
 	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "todo-txt.sublime-project",
 	"replace":
 	{
 		"height": 62.0
@@ -1110,6 +1871,7 @@
 	"select_file":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
 		],
@@ -1118,15 +1880,32 @@
 	"select_project":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
 		],
 		"width": 0.0
 	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 223.0,
-	"status_bar_visible": true
+	"side_bar_width": 172.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
 }

@@ -4,7 +4,7 @@ define(["jquery"], function($) {
 	}
 
 	function getPrefsPath() {
-		var path = require('path'), fs = require('fs');
+		var path = require("path");
 		var prefsPath = path.join(process.cwd(), "prefs.json");
 		return prefsPath;
 	}
@@ -12,9 +12,10 @@ define(["jquery"], function($) {
 	Preferences.prototype.load = function() {
 		var prefsPath = getPrefsPath(), prefsStr;
 		try {
-			var fs = require('fs');
+			var fs = require("fs");
 			prefsStr = fs.readFileSync(prefsPath, {encoding:"utf8"});
 		} catch (e) {
+			console.log(e);
 		}
 		if (prefsStr) {
 			var prefs = JSON.parse(prefsStr);
@@ -24,7 +25,7 @@ define(["jquery"], function($) {
 	};
 
 	Preferences.prototype.save = function() {
-		var fs = require('fs'), prefsPath = getPrefsPath(), prefsStr;
+		var fs = require("fs"), prefsPath = getPrefsPath();
 		fs.writeFileSync(prefsPath, JSON.stringify(this), {encoding:"utf8"});
 	};
 

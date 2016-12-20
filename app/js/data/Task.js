@@ -114,17 +114,18 @@ define(["data/TaskTokenizer"], function(TaskTokenizer) {
             var compDate = this.getCompletedDate(), rhsCompDate = rhs.getCompletedDate();
             if (compDate && rhsCompDate) {
                 // reverse chronological date (most recently completed first)
-                return rhsCompDate.localeCompare(compDate);
+                var dateSortVal = rhsCompDate.localeCompare(compDate);
+
+                // if the completion dates are the same then preserve the original line ordering in the file
+                if (dateSortVal == 0)
+                    dateSortVal = this.index - rhs.index;
+                return dateSortVal;
             }
             else
                 console.error("invalid completed date");
         }
         
-        // move starred tasks to the top
-        if (this.isStar() && !rhs.isStar()) return -1;
-        else if (rhs.isStar() && !this.isStar()) return 1;
-
-        // sort on priority
+        // both tasks are non-completed so sort on priority then original line number
         var prio = this.getPriority(), rhsPrio = rhs.getPriority();
         if (prio !== null && rhsPrio !== null) return prio.localeCompare(rhsPrio);
         else if (prio !== null && rhsPrio === null) return -1;
@@ -132,8 +133,8 @@ define(["data/TaskTokenizer"], function(TaskTokenizer) {
 
         // TODO: sort on due date
 
-        // last is alphabetical by title
-        return this.getTitle().localeCompare(rhs.getTitle());
+        // sort on original line number
+        return this.index - rhs.index;
     };
 
     Task.prototype.setComplete = function(flag, completedDate) {

@@ -2,7 +2,7 @@
 
 define(
 	["xlib/EventTarget", "bootstrap"],
-	function(EventTarget, bootstrap)
+	function(EventTarget /*, bootstrap */)
 {
 
 	function BaseDlg() {

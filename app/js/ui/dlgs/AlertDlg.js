@@ -14,9 +14,9 @@ define(
 		buttonTitles.forEach(function(btnTitle) {
 			var $btn = null;
 			if (typeof btnTitle == "string")
-				$btn = $('<a class="btn">' + btnTitle + '</a>');
+				$btn = $("<a class=\"btn\">" + btnTitle + "</a>");
 			else {
-				$btn = $('<a class="btn">' + btnTitle.title + '</a>');
+				$btn = $("<a class=\"btn\">" + btnTitle.title + "</a>");
 				btnTitle.classes.forEach(function(className) {
 					$btn.addClass(className);
 				});

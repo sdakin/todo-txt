@@ -50,16 +50,15 @@ input[type="text"].dateInput {
                 <div style="padding-bottom: 10px">
                     <button type="button" class="btn btn-complete"><img src="img/incomplete.png"></button>
                     <span style="margin-left: 5px">Completed date:</span>
-                    <div class="btn-group">
-                        <input id="fldCompletedDate" type="text" class="dateInput"/>
-                        <button class="btn dropdown-toggle" data-toggle="dropdown">
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <!-- dropdown menu links -->
-                        </ul>
+                    <div style="display:inline-block;vertical-align: middle;">
+                        <div class="input-group" style="width:155px">
+                            <input id="fldCompletedDate" type="text" class="form-control" aria-describedby="basic-addon2">
+                            <span class="input-group-addon" id="basic-addon2" style="cursor:pointer">
+                                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+                            </span>
+                        </div>
                     </div>
-                </div>
+              </div>
                 <div class="prioritySelector">
                     <div class="btn-group">
                         <button type="button" class="btn btn-star"><img src="img/staroff.png"></button>

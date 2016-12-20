@@ -2,7 +2,7 @@
 
 define(
     ["xlib/EventTarget", "data/Task", "data/TaskTokenizer", "bootstrap"],
-    function(EventTarget, Task, TaskTokenizer, bootstrap)
+    function(EventTarget, Task, TaskTokenizer /*, bootstrap */)
 {
 
     function EditTaskDlg(task) {

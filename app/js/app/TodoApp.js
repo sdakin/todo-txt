@@ -46,10 +46,6 @@ define(
             self.prefs = new AppPrefs();
             self.prefs.load();
             self.loadTodoFile();
-
-            // self.getTodoFile().then(function() {
-            //     self.loadTodoFile();
-            // });
         });
     };
 
@@ -75,8 +71,8 @@ define(
         } else {
             $taskList.children().each(function(index, taskItem) {
                 var $taskItem = $(taskItem);
-                var index = $taskItem.attr('data-index');
-                var task = self.taskList.tasks[index];
+                var taskIndex = $taskItem.attr("data-index");
+                var task = self.taskList.tasks[taskIndex];
                 if (task.hasContext(context))
                     $taskItem.show();
                 else
@@ -93,8 +89,8 @@ define(
         } else {
             $taskList.children().each(function(index, taskItem) {
                 var $taskItem = $(taskItem);
-                var index = $taskItem.attr('data-index');
-                var task = self.taskList.tasks[index];
+                var taskIndex = $taskItem.attr("data-index");
+                var task = self.taskList.tasks[taskIndex];
                 if (task.hasProject(project))
                     $taskItem.show();
                 else
@@ -103,56 +99,87 @@ define(
         }
     };
 
-    TodoApp.prototype.getTodoFile = function(subDir) {
-        var self = this;
-        var resultQ = $.Deferred();
-        var getTodoFileQ = $.Deferred();
-
-        chrome.storage.local.get("todoFileID", function(result) {
-            if (!("todoFileID" in result)) {
-                var alert = new AlertDlg("Specify todo.txt File", "You have not specified the todo.txt file to use. Would you like to browse for one now?", ["Later", "Now"]);
-                alert.addListener(AlertDlg.BUTTON_CLICKED, function(e) {
-                    alert.hide();
-                    if (e.buttonTitle == "Now") {
-                        chrome.fileSystem.chooseEntry({type:"openWritableFile"}, function(entry) {
-                            chrome.fileSystem.getDisplayPath(entry, function(displayPath) {
-                                var settings = {
-                                    todoFilePath: displayPath,
-                                    todoFileID: chrome.fileSystem.retainEntry(entry)
-                                };
-                                chrome.storage.local.set(settings, function() {
-                                    getTodoFileQ.resolve(entry);
-                                });
-                            });
-                        });
-                    } else
-                        getTodoFileQ.reject("todo.txt file not defined");
-                });
-                alert.show();
+    TodoApp.prototype.handleTaskItemKeydown = function(e) {
+        var self = this, index, $newInput;
+        if (e.keyCode == 38) {
+            index = getActiveItemIndex($(e.target));
+            if (index > 0) {
+                saveSelectionPos($(e.currentTarget));
+                $newInput = $($("#tasks").find(".task-item")[index - 1]).find(".task-title");
+                $newInput.focus();
+                setTimeout( function() { setSelectionPos($newInput); }, 1);
             } else {
-                chrome.fileSystem.restoreEntry(result.todoFileID, function(entry) {
-                    getTodoFileQ.resolve(entry);
-                });
+                return false;
             }
-        });
-        
-        getTodoFileQ.done(function(fileEntry) {
-            self.todoFile = fileEntry;
-            resultQ.resolve();
-        }).fail(function(err) {
-            resultQ.reject(err);
-        });
+        } else if (e.keyCode == 40) {
+            index = getActiveItemIndex($(e.target));
+            var $tasks = $("#tasks").find(".task-item");
+            if (index < $("#tasks").find(".task-item").length - 1) {
+                saveSelectionPos($(e.currentTarget));
+                $newInput = $($tasks[index + 1]).find(".task-title");
+                $newInput.focus();
+                setTimeout( function() { setSelectionPos($newInput); }, 1);
+            } else {
+                return false;
+            }
+        } else {
+            if (e.keyCode == 13) {
+                index = getActiveItemIndex($(e.target));
+                self.taskList.insertTaskAtIndex(new Task(""), index + 1);
+                self.reloadTasks();
+            } else if (e.keyCode == 8) {
+                if ($(e.target).val().length == 0) {
+                    // delete task
+                    var $taskItem = $(e.target).parents(".task-item");
+                    self.taskList.deleteTaskAtIndex(Number($taskItem.attr("data-index")));
+                    self.reloadTasks();
+                }
+            }
+            delete self.savedSelectionPos;
+        }
 
-        return resultQ.promise();
+        function getActiveItemIndex($item) {
+            var $tasks = $("#tasks").find(".task-item");
+            var index = $tasks.index($item.parents(".task-item"));
+            return index;
+        }
+
+        function getWidthOfText(txt, fontname, fontsize) {
+            var c=document.createElement("canvas");
+            var ctx=c.getContext("2d");
+            ctx.font = fontsize + fontname;
+            var width = ctx.measureText(txt).width;
+            return width;
+        }
+
+        function saveSelectionPos($input) {
+            if (!("savedSelectionPos" in self)) {
+                var text = $input.val().substr(0, $input[0].selectionStart);
+                self.savedSelectionPos = getWidthOfText(text, $input.css("font-family"), $input.css("font-size"));
+            }
+        }
+
+        function setSelectionPos($input) {
+            var curWidth = 0, fontName = $input.css("font-family"), fontSize = $input.css("font-size");
+            for (var i = 1 ; i < $input.val().length ; i++) {
+                var width = getWidthOfText($input.val().substr(0, i), fontName, fontSize);
+                if (width > self.savedSelectionPos) {
+                    if (self.savedSelectionPos - curWidth < width - self.savedSelectionPos) i--;
+                    $input.selectRange(i);
+                    break;
+                }
+                curWidth = width;
+            }
+        }
     };
 
     TodoApp.prototype.loadProjectsAndContexts = function() {
         var self = this;
         var $projects = $("#projects");
         $projects.empty();
-        $projects.append($('<li><a href="#">All</a></li>'));
+        $projects.append($("<li><a href=\"#\">All</a></li>"));
         Object.keys(self.taskList.projects).sort().forEach(function(project) {
-            $projects.append($('<li><a href="#">' + project + '</a></li>'));
+            $projects.append($("<li><a href=\"#\">" + project + "</a></li>"));
         });
         $projects.find("a").click(function(e) {
             self.filterTasksByProject(e.target.innerText);
@@ -160,9 +187,9 @@ define(
 
         var $contexts = $("#contexts");
         $contexts.empty();
-        $contexts.append($('<li><a href="#">All</a></li>'));
+        $contexts.append($("<li><a href=\"#\">All</a></li>"));
         Object.keys(self.taskList.contexts).sort().forEach(function(context) {
-            $contexts.append($('<li><a href="#">' + context + '</a></li>'));
+            $contexts.append($("<li><a href=\"#\">" + context + "</a></li>"));
         });
         $contexts.find("a").click(function(e) {
             self.filterTasksByContext(e.target.innerText);
@@ -170,11 +197,11 @@ define(
     };
 
 
-    // test reading file: C:\Users\sdakin\Dropbox\todo\todo.txt
+    // test reading file: C:\Users\sdakin.ADOBENET\Dropbox\todo\todo.txt
 
     TodoApp.prototype.loadTodoFile = function() {
         var self = this;
-        var lineReader = require('line-reader');
+        var lineReader = require("line-reader");
         self.taskList = new TaskList();
         lineReader.eachLine(self.prefs.todoTxtFile, function(line) {
             if (line && line.length > 0)
@@ -207,7 +234,8 @@ define(
             }
             $taskItem.attr("data-index", task.index);
             var $title = $taskItem.find(".task-title");
-            $title.text(task.getTitle());
+            $title.val(task.getTitle());
+            $title.attr("size", $title.val().length);
             if (task.isComplete()) $title.css("color", "darkgray");
             else if (task.isPastDue()) $title.css("color", "red");
             $taskList.append($taskItem);
@@ -217,6 +245,15 @@ define(
         });
         $taskList.find(".task-contents").click(function(e) {
             self.editTask($(e.target).parents(".task-item"));
+        });
+
+        var $taskTitle = $taskList.find(".task-title");
+        $taskTitle.click(function() {
+            delete self.savedSelectionPos;
+            return false;
+        });
+        $taskTitle.keydown(function(e) {
+            self.handleTaskItemKeydown(e);
         });
     };
 
