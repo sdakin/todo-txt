@@ -34,15 +34,15 @@ define(
         var self = this;
         var initQ = $.Deferred();
 
-        // an unsightly kludge to get the bottom border to show up properly
-        $("html").height($("html").height() - 2);
-
         // load the alert dialogs
         $("#app-alert-templates .alerts").load("ui/dlgs/alerts.html", function() {
             initQ.resolve();
         });
 
         initQ.done(function() {
+            $("#btn-save").click(function() {
+                self.saveTasks();
+            });
             self.prefs = new AppPrefs();
             self.prefs.load();
             self.loadTodoFile();
@@ -258,7 +258,20 @@ define(
     };
 
     TodoApp.prototype.saveTasks = function() {
-        console.log("TODO: implement saveTasks()...");
+        var self = this;
+        var fs = require("fs");
+        fs.open(self.prefs.todoTxtFile, "w", function(err, fd) {
+            if (!err) {
+                self.taskList.tasks.forEach(function(task) {
+                    fs.writeSync(fd, task.rawData);
+                });
+                fs.closeSync(fd);
+            } else {
+                // TODO: report file open error
+                console.err("error opening tasks file...");
+                debugger;
+            }
+        });
     };
 
     TodoApp.prototype.toggleComplete = function($taskItem) {
